@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "blend",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["react"],
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "react/default-props-match-prop-types": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*-test.js*"],
+        "peerDependencies": true,
+      },
+    ],
+  },
+}

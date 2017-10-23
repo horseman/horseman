@@ -6,7 +6,8 @@
   "repository": "horseman/horseman-components",
   "license": "MIT",
   "scripts": {
-    "prePublishOnly": "yarn build"
+    "build": "./scripts/build.js",
+    "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",

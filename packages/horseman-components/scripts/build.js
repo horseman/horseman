@@ -23,7 +23,7 @@ const clearDist = () => {
 const buildEs = () => {
   console.log("\nBuilding ES modules ...");
 
-  exec(`babel ./src/ -d ./dist/es`, {
+  exec(`./node_modules/.bin/babel ./src/ -d ./dist/es`, {
     BABEL_ENV: "es",
   });
 };

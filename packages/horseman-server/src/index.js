@@ -30,7 +30,7 @@ const configPath = path.resolve(process.cwd(), "horseman.config.js");
 const config = require(configPath)();
 const serverConfig  = {
   ...config.server,
-  render: require(config.server.backendBundle),
+  render: require(config.server.backendBundle).default,
 };
 /* eslint-enable */
 

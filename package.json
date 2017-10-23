@@ -6,6 +6,7 @@
   ],
   "scripts": {
     "lint": "eslint packages/**/src",
+    "build": "node scripts/build.js",
     "precommit": "lint-staged",
     "test": "jest"
   },

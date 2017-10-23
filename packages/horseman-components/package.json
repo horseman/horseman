@@ -5,12 +5,17 @@
   "module": "dist/es/index.js",
   "repository": "horseman/horseman-components",
   "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run build"
+  },
   "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "styled-components": "^2.2.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "enzyme": "^3.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",

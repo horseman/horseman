@@ -10,25 +10,23 @@ const exec = (command, extraEnv) =>
     env: Object.assign({}, process.env, extraEnv),
   });
 
-const clearDist = p => {
+const clearDist = () => {
   console.log("\nCleaning ...");
   try {
-    rimraf.sync(`packages/${p}/dist`);
+    rimraf.sync(`./dist`);
   } catch (err) {
     console.error(err);
     process.exit(1);
   }
 };
 
-const buildEs = p => {
+const buildEs = () => {
   console.log("\nBuilding ES modules ...");
 
-  exec(`babel packages/${p}/src/ -d packages/${p}/dist/es`, {
+  exec(`babel ./src/ -d ./dist/es`, {
     BABEL_ENV: "es",
   });
 };
 
-packages.forEach(p => {
-  clearDist(p);
-  buildEs(p);
-});
+clearDist();
+buildEs();

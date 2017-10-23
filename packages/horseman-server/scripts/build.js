@@ -18,6 +18,6 @@ const exec = (command, extraEnv) =>
 
 console.log('\nBuilding ES modules ...');
 
-exec('babel src/ -d dist/es', {
+exec('babel src/ -d dist/es  --presets es2015,stage-2', {
     BABEL_ENV: 'es',
 });

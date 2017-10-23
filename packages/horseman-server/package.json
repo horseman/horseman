@@ -9,6 +9,9 @@
   "scripts": {
     "build": "node ./scripts/build.js"
   },
+  "bin": {
+    "horseman-server": "./dist/es/index.js"
+  },
   "dependencies": {
     "compression": "^1.7.1",
     "express": "^4.16.2"

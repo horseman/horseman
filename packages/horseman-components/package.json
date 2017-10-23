@@ -1,6 +1,6 @@
 {
   "name": "horseman-components",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Components meant to be used with horseman.io projects",
   "module": "dist/es/index.js",
   "repository": "horseman/horseman-components",

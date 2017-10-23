@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 import express from 'express';
 import path from 'path';
+import fs from 'fs';
 import compression from 'compression';
 
 
 const runServer = ({ render, template, publicPath, rootDiv }) => {
   const app = express();
+  const templateHtml = fs.readFileSync(template,"utf8");
 
   app.use(compression());
   app.use(express.static(publicPath));
@@ -14,7 +16,7 @@ const runServer = ({ render, template, publicPath, rootDiv }) => {
     render(req.path).then((response) => (
       res
       .status(response.statusCode || 200)
-      .send(template.replace(rootDiv, response.html))
+      .send(templateHtml.replace(rootDiv, response.html))
       )
     )
   ));

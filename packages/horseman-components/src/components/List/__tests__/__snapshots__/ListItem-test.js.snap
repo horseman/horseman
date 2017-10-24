@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem renders correctly with a mobileBase > 1 1`] = `
+.c0 {
+  width: calc(50% - NaNpx);
+  margin-top: 30px;
+}
+
+.c0:nth-child(-n + 2) {
+  margin-top: 0;
+}
+
+@media (min-width:892px) {
+  .c0 {
+    width: calc(50% - 15px);
+  }
+
+  .c0:nth-child(-n + 2) {
+    margin-top: 0em;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`ListItem renders with a base and default mobileBase 1`] = `
+.c0 {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.c0:nth-child(-n + 1) {
+  margin-top: 0;
+}
+
+@media (min-width:892px) {
+  .c0 {
+    width: calc(50% - 15px);
+  }
+
+  .c0:nth-child(-n + 2) {
+    margin-top: 0em;
+  }
+}
+
+<div
+  className="c0"
+/>
+`;

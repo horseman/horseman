@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Create the correct number of trailing empty children to force display 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: bottom;
+  -webkit-box-align: bottom;
+  -ms-flex-align: bottom;
+  align-items: bottom;
+}
+
+<div
+  className="c0"
+>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="1"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="2"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="3"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="4"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  />
+</div>
+`;
+
+exports[`List modifies the basis to prevent trailing items. 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: bottom;
+  -webkit-box-align: bottom;
+  -ms-flex-align: bottom;
+  align-items: bottom;
+}
+
+<div
+  className="c0"
+>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="1"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="2"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="3"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+</div>
+`;
+
+exports[`List renders with a base and default mobileBase 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: bottom;
+  -webkit-box-align: bottom;
+  -ms-flex-align: bottom;
+  align-items: bottom;
+}
+
+<div
+  className="c0"
+>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={2}
+    gutter={30}
+    key="1"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+</div>
+`;

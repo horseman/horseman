@@ -27,9 +27,8 @@ const runServer = ({ render, template, publicPath, rootDiv }) => {
   });
 };
 
-const workingDirectory = process.cwd();
-
-const configPath = path.resolve(workingDirectory, "horseman.config.js");
+const workingDirectory = path.resolve(process.cwd());
+const configPath = path.join(workingDirectory, "horseman.config.js");
 /* eslint-disable */
 const config = require(configPath)();
 const defaults = {
@@ -38,10 +37,11 @@ const defaults = {
     template: path.join(workingDirectory,"public","index.tmpl"),
     rootDiv: '<div id="root"></div>',
 };
+const bundlePath = config.server.backendBundle ? config.server.backendBundle : defaults.backendBundle;
 const serverConfig  = {
   ...defaults,
   ...config.server,
-  render: require(config.server.backendBundle).default,
+  render: require(bundlePath).default,
 };
 /* eslint-enable */
 

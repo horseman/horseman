@@ -7,4 +7,4 @@ const exec = (cmd, env) =>
     env: Object.assign({}, process.env, env),
   });
 
-exec("lerna run build --stream");
+exec("lerna run test --stream");

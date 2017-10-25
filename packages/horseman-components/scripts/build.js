@@ -2,6 +2,11 @@
 const execSync = require("child_process").execSync;
 const rimraf = require("rimraf");
 
+const rollup = require("rollup");
+const resolve = require("rollup-plugin-node-resolve");
+const commonjs = require("rollup-plugin-commonjs");
+const babel = require("rollup-plugin-babel");
+
 const packages = ["horseman-components"];
 
 const exec = (command, extraEnv) =>
@@ -28,5 +33,35 @@ const buildEs = () => {
   });
 };
 
+async function buildCjs() {
+  console.log("\nBuilding CJS modules ...");
+  // create a bundle
+  const bundle = await rollup.rollup({
+    input: "src/index.js",
+    external: ["react", "styled-components", "prop-types"],
+    plugins: [
+      babel({
+        runtimeHelpers: true,
+        exclude: "node_modules/**",
+      }),
+      commonjs(),
+      resolve({
+        jsnext: true,
+        browser: true,
+        main: true,
+        preferBuiltins: true,
+        extensions: [".js", ".jsx", "json"],
+      }),
+    ],
+  });
+
+  await bundle.write({
+    file: "dist/cjs/index.js",
+    format: "cjs",
+    name: "HorsemanComponents",
+  });
+}
+
 clearDist();
 buildEs();
+buildCjs();

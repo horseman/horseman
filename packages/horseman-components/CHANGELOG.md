@@ -1,3 +1,11 @@
+1.4.1 / 2017-10-24
+==================
+- Build tweaks to generate a cjs bundle
+
+1.4.0 / 2017-10-24
+==================
+- Add the List component
+
 1.3.1 / 2017-10-23
 ==================
 - Integrate lerna

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TemplateBuilder renders correctly 1`] = `
+<div>
+  <Content
+    body="foo bar"
+    key="0"
+  />
+  <Image
+    key="1"
+    src="bizbaz"
+  />
+</div>
+`;

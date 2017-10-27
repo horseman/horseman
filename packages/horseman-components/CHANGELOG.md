@@ -1,3 +1,8 @@
+1.6.0 / 2017-10-27
+==================
+- TemplateBuilder
+- ResponsiveBackgroundImage
+
 1.4.1 / 2017-10-24
 ==================
 - Build tweaks to generate a cjs bundle

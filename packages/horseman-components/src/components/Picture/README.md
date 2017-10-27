@@ -2,7 +2,7 @@ This renders a picture element with `<srcset>` and a fallback `<img>` tag.
 Props not otherwise specified will be passed to the underlying `<img>` tag.
 
 ### Examples
-```
+```js
 const imageData = {
   "src": "http://placehold.it/800x200",
   "alt": '',

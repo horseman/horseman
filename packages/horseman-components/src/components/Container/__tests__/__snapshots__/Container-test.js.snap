@@ -30,6 +30,21 @@ exports[`Container Can render with custom size 1`] = `
 </div>
 `;
 
+exports[`Container Can render with theme size 1`] = `
+.c0 {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 31.25em;
+}
+
+<div
+  className="c0"
+  size="custom"
+>
+  Foo
+</div>
+`;
+
 exports[`Container renders defaults correctly 1`] = `
 .c0 {
   margin: 0 auto;

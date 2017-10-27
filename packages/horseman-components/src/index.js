@@ -4,6 +4,7 @@ import TwoColumn from "./components/TwoColumn";
 import List from "./components/List";
 import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import TemplateBuilder from "./components/TemplateBuilder";
+import Container from "./components/Container";
 
 export {
   RichText,
@@ -12,4 +13,5 @@ export {
   List,
   ResponsiveBackgroundImage,
   TemplateBuilder,
+  Container,
 };

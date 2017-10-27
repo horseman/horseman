@@ -7,6 +7,7 @@ const components = [
   "List",
   "ResponsiveBackgroundImage",
   "TemplateBuilder",
+  "Container",
 ];
 
 describe("horseman.js index", () => {

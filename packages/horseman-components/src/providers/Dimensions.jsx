@@ -17,7 +17,6 @@ export default Component => {
       };
 
       this.handleResize = this.handleResize.bind(this);
-      this.handleLookup = this.handleLookup.bind(this);
     }
 
     componentDidMount() {

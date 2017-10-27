@@ -45,6 +45,7 @@
     "styled-components": "^2.2.1"
   },
   "dependencies": {
-    "babel-helpers": "^6.24.1"
+    "babel-helpers": "^6.24.1",
+    "element-resize-detector": "^1.1.12"
   }
 }

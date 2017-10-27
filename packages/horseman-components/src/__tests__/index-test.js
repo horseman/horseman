@@ -4,11 +4,12 @@ import RichText from "../components/RichText";
 import TwoColumn from "../components/TwoColumn";
 import Picture from "../components/Picture";
 import List from "../components/List";
+import ResponsiveBackgroundImage from "../components/ResponsiveBackgroundImage";
 
 describe("horseman.js index", () => {
   describe("should export", () => {
     test("the Correct Number of items", () => {
-      expect(Object.keys(HorsemanComponents)).toHaveLength(4);
+      expect(Object.keys(HorsemanComponents)).toHaveLength(5);
     });
     test("RichText", () => {
       expect(typeof HorsemanComponents.RichText).toBe("function");
@@ -25,6 +26,12 @@ describe("horseman.js index", () => {
     test("List", () => {
       expect(typeof HorsemanComponents.List).toBe("function");
       expect(HorsemanComponents.List).toEqual(List);
+    });
+    test("ResponsiveBackgroundImage", () => {
+      expect(typeof HorsemanComponents.List).toBe("function");
+      expect(HorsemanComponents.ResponsiveBackgroundImage).toEqual(
+        ResponsiveBackgroundImage,
+      );
     });
   });
 });

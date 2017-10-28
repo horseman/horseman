@@ -1,8 +1,7 @@
 import BackgroundImage from "../BackgroundImage";
-import dimensions from "../../providers/Dimensions";
 
-// Have to check for Window or else dimensions will break SSR
-const ResponsiveBackgroundImage = typeof window !== "undefined" ?
-    dimensions(BackgroundImage) : BackgroundImage;
+// Check for Window before importing dimension so we don't break SSR
+const dimensions = typeof window !== "undefined" ?
+    require("../../providers/Dimensions") : component => component;
 
-export default ResponsiveBackgroundImage;
+export default dimensions(BackgroundImage);

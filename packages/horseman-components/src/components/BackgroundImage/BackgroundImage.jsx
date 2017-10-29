@@ -38,6 +38,12 @@ BackgroundImage.propTypes = {
    * The image to be used backgrounding this container
    */
   bgImage: PropTypes.shape({ ...imageType }),
+
+  /**
+   * Will display the background image within srcset that is optimized for the
+   * pixel width given here.
+   */
+  width: PropTypes.number,
 };
 
 /**

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navlist renders responsive with srcset 1`] = `
+.c0 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+<picture
+  className="c0"
+>
+  <source
+    media="(min-width:300px)"
+    srcSet="foo"
+  />
+  <source
+    media="(min-width:600px)"
+    srcSet="bar"
+  />
+  <img
+    alt=" "
+    srcSet="foo"
+  />
+</picture>
+`;
+
+exports[`Picture renders without srcset 1`] = `
+.c0 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+<picture
+  className="c0"
+>
+  <img
+    alt=" "
+    srcSet="foo"
+  />
+</picture>
+`;

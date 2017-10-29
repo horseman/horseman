@@ -1,13 +1,13 @@
 import React from "react";
-import elementResizeDetectorMaker from "element-resize-detector";
+
+const elementResizeDetectorMaker = typeof window !== "undefined" ?
+require("element-resize-detector") : obj => obj;
 
 const erd = elementResizeDetectorMaker({
   strategy: "scroll",
 });
 
-const Node = Component => Component;
-
-const Browser =  Component => {
+export default Component => {
   class Wrap extends React.Component {
     constructor() {
       super();
@@ -81,8 +81,3 @@ const Browser =  Component => {
 
   return Wrap;
 };
-
-export {
-  Node,
-  Browser
-}

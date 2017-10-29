@@ -5,7 +5,9 @@ const erd = elementResizeDetectorMaker({
   strategy: "scroll",
 });
 
-export default Component => {
+const Node = Component => Component;
+
+const Browser =  Component => {
   class Wrap extends React.Component {
     constructor() {
       super();
@@ -79,3 +81,8 @@ export default Component => {
 
   return Wrap;
 };
+
+export {
+  Node,
+  Browser
+}

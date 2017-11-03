@@ -25,19 +25,20 @@ const clearDist = () => {
   }
 };
 
-const buildEs = () => {
+async function buildEs() {
   console.log("\nBuilding ES modules ...");
 
   exec(`./node_modules/.bin/babel ./src/ -d ./dist/es`, {
     BABEL_ENV: "es",
   });
-};
+}
 
-async function buildCjs() {
-  console.log("\nBuilding CJS modules ...");
+async function buildCjs({ input, file }) {
+  console.log(`\nBuilding CJS module ${input}...`);
+
   // create a bundle
   const bundle = await rollup.rollup({
-    input: "src/index.js",
+    input,
     external: ["react", "styled-components", "prop-types"],
     plugins: [
       babel({
@@ -56,7 +57,7 @@ async function buildCjs() {
   });
 
   await bundle.write({
-    file: "dist/cjs/index.js",
+    file,
     format: "cjs",
     name: "HorsemanComponents",
   });
@@ -64,4 +65,13 @@ async function buildCjs() {
 
 clearDist();
 buildEs();
-buildCjs();
+
+buildCjs({
+  input: "src/index.js",
+  file: "dist/cjs/index.js",
+});
+
+buildCjs({
+  input: "src/styleUtils/index.js",
+  file: "dist/cjs/styleUtils/index.js",
+});

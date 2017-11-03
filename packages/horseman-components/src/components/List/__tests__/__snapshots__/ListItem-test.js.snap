@@ -10,7 +10,7 @@ exports[`ListItem renders correctly with a mobileBase > 1 1`] = `
   margin-top: 0;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c0 {
     width: calc(50% - 15px);
   }
@@ -35,7 +35,7 @@ exports[`ListItem renders with a base and default mobileBase 1`] = `
   margin-top: 0;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c0 {
     width: calc(50% - 15px);
   }

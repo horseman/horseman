@@ -1,5 +1,4 @@
 import * as HorsemanComponents from "../index";
-import * as styleUtils from "../styleUtils/index";
 
 const components = [
   "RichText",
@@ -32,7 +31,7 @@ describe("horseman.js index", () => {
 
     exportedUtils.forEach(e => {
       test(e, () => {
-        expect(styleUtils[e]).toEqual(
+        expect(HorsemanComponents.utils[e]).toEqual(
           // eslint-disable-next-line import/no-dynamic-require
           require(`../styleUtils/${e}`).default,
         );

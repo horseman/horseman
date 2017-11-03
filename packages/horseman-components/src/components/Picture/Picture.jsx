@@ -13,7 +13,7 @@ const StyledPicture = styled.picture`
 `;
 
 const Picture = ({ src, srcset, alt, ...rest }) => {
-  // Sort the srcset by width from smallest to largest
+  // Sort the srcset by width from largest to smallest
   const sortedSrcset = srcset.slice().sort((a, b) => a.width < b.width);
 
   const items = sortedSrcset.map(s => (

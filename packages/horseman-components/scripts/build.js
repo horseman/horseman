@@ -70,8 +70,3 @@ buildCjs({
   input: "src/index.js",
   file: "dist/cjs/index.js",
 });
-
-buildCjs({
-  input: "src/styleUtils/index.js",
-  file: "dist/cjs/styleUtils/index.js",
-});

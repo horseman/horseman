@@ -8,7 +8,7 @@ describe("Picture", () => {
     const tree = renderer.create(<Picture src="foo" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test("renders responsive with srcset", () => {
+  test("renders responsive with srcset and sorts it correctly", () => {
     const tree = renderer
       .create(
         <Picture

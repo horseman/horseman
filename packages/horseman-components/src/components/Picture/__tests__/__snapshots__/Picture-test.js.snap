@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Picture renders responsive with srcset 1`] = `
+exports[`Picture renders responsive with srcset and sorts it correctly 1`] = `
 .c0 img {
   max-width: 100%;
   width: 100%;
@@ -12,12 +12,12 @@ exports[`Picture renders responsive with srcset 1`] = `
   className="c0"
 >
   <source
-    media="(min-width:300px)"
-    srcSet="foo"
-  />
-  <source
     media="(min-width:600px)"
     srcSet="bar"
+  />
+  <source
+    media="(min-width:300px)"
+    srcSet="foo"
   />
   <img
     alt=" "

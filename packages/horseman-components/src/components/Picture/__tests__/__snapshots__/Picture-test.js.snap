@@ -3,6 +3,7 @@
 exports[`Picture renders responsive with srcset 1`] = `
 .c0 img {
   max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -28,6 +29,7 @@ exports[`Picture renders responsive with srcset 1`] = `
 exports[`Picture renders without srcset 1`] = `
 .c0 img {
   max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
 }

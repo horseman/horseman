@@ -6,7 +6,7 @@ import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import TemplateBuilder from "./components/TemplateBuilder";
 import Container from "./components/Container";
 
-import styleUtils from "./styleUtils";
+import * as styleUtils from "./styleUtils";
 
 export {
   RichText,

@@ -13,12 +13,11 @@ const StyledPicture = styled.picture`
 `;
 
 const Picture = ({ src, srcset, alt, ...rest }) => {
-  const items = srcset.map(sourceSet => (
-    <source
-      key={sourceSet.src}
-      media={`(min-width:${sourceSet.width}px)`}
-      srcSet={sourceSet.src}
-    />
+  // Sort the srcset by width from smallest to largest
+  const sortedSrcset = srcset.slice().sort((a, b) => a.width < b.width);
+
+  const items = sortedSrcset.map(s => (
+    <source key={s.src} media={`(min-width:${s.width}px)`} srcSet={s.src} />
   ));
 
   return (

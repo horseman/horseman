@@ -1,7 +1,9 @@
 import React from "react";
 
-const elementResizeDetectorMaker = typeof window !== "undefined" ?
-require("element-resize-detector") : obj => obj;
+const elementResizeDetectorMaker =
+  typeof window !== "undefined"
+    ? require("element-resize-detector")
+    : obj => obj;
 
 const erd = elementResizeDetectorMaker({
   strategy: "scroll",

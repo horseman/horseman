@@ -1,3 +1,16 @@
+1.7.3 / 2017-11-1
+==================
+- Fix Picture element bug when srcset widths are not passed in in correct order.
+
+1.7.1 / 2017-11-1
+==================
+- Fix styleUtils export
+
+1.7.0 / 2017-11-1
+==================
+- Export styleUtils
+- Style updates to picture element
+
 1.6.1 / 2017-10-27
 ==================
 - Add Container component

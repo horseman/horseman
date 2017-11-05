@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackgroundImage renders correct src with different srcsets test default 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(default);
+}
+
+<div
+  className="c0"
+  width={99}
+>
+  foo
+</div>
+`;
+
+exports[`BackgroundImage renders correct src with different srcsets test larger 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(larger);
+}
+
+<div
+  className="c0"
+  width={199}
+>
+  foo
+</div>
+`;
+
+exports[`BackgroundImage renders correct src with different srcsets test largest 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(largest);
+}
+
+<div
+  className="c0"
+  width={299}
+>
+  foo
+</div>
+`;
+
+exports[`BackgroundImage renders correct src with different srcsets uses the largest image when width is larger than all available srcsets 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(largest);
+}
+
+<div
+  className="c0"
+  width={500}
+>
+  foo
+</div>
+`;
+
+exports[`BackgroundImage renders correctly 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(default);
+}
+
+<div
+  className="c0"
+>
+  foo
+</div>
+`;

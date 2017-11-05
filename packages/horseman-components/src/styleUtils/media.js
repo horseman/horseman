@@ -1,12 +1,13 @@
 import { css } from "styled-components";
 
 const sizes = {
-  xs: ["max-width: 566px"],
-  sm: ["min-width: 567px", "max-width: 891px"],
-  smAndUp: ["min-width: 567px"],
-  md: ["min-width: 892px", "max-width: 999px"],
-  mdAndUp: ["min-width: 892px"],
-  lg: ["min-width: 1000px"],
+  xs: ["max-width: 767px"],
+  sm: ["min-width: 768px", "max-width: 991px"],
+  smAndUp: ["min-width: 768px"],
+  md: ["min-width: 992px", "max-width: 1199px"],
+  mdAndUp: ["min-width: 992px"],
+  lg: ["min-width: 1200px"],
+  xl: ["min-width: 1400px"],
 };
 
 // Iterate through the sizes and create a media template

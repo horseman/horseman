@@ -37,7 +37,7 @@ exports[`TwoColumn Allows for custom gutter values 1`] = `
   justify-content: space-between;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c1 {
     -webkit-flex-basis: calc(50% - 25px);
     -ms-flex-basis: calc(50% - 25px);
@@ -48,7 +48,7 @@ exports[`TwoColumn Allows for custom gutter values 1`] = `
   }
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c2 {
     -webkit-flex-basis: calc(50% - 25px);
     -ms-flex-basis: calc(50% - 25px);
@@ -118,7 +118,7 @@ exports[`TwoColumn Will update the order of the columns when mobileFlip is passe
   justify-content: space-between;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c2 {
     -webkit-flex-basis: calc(50% - 25px);
     -ms-flex-basis: calc(50% - 25px);
@@ -129,7 +129,7 @@ exports[`TwoColumn Will update the order of the columns when mobileFlip is passe
   }
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c1 {
     -webkit-flex-basis: calc(50% - 25px);
     -ms-flex-basis: calc(50% - 25px);
@@ -199,7 +199,7 @@ exports[`TwoColumn allows custom columnConfig to change column values 1`] = `
   justify-content: space-between;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c1 {
     -webkit-flex-basis: calc(30% - 10px);
     -ms-flex-basis: calc(30% - 10px);
@@ -210,7 +210,7 @@ exports[`TwoColumn allows custom columnConfig to change column values 1`] = `
   }
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c2 {
     -webkit-flex-basis: calc(70% - 20px);
     -ms-flex-basis: calc(70% - 20px);
@@ -280,7 +280,7 @@ exports[`TwoColumn renders correctly 1`] = `
   justify-content: space-between;
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c1 {
     -webkit-flex-basis: calc(50% - 5px);
     -ms-flex-basis: calc(50% - 5px);
@@ -291,7 +291,7 @@ exports[`TwoColumn renders correctly 1`] = `
   }
 }
 
-@media (min-width:892px) {
+@media (min-width:992px) {
   .c2 {
     -webkit-flex-basis: calc(50% - 5px);
     -ms-flex-basis: calc(50% - 5px);

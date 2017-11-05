@@ -6,6 +6,8 @@ import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import TemplateBuilder from "./components/TemplateBuilder";
 import Container from "./components/Container";
 
+import * as utils from "./styleUtils";
+
 export {
   RichText,
   TwoColumn,
@@ -14,4 +16,5 @@ export {
   ResponsiveBackgroundImage,
   TemplateBuilder,
   Container,
+  utils,
 };

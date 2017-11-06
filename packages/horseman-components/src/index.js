@@ -1,22 +1,29 @@
-import Picture from "./components/Picture";
 import Carousel from "./components/Carousel";
-import RichText from "./components/RichText";
-import TwoColumn from "./components/TwoColumn";
-import List from "./components/List";
-import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
-import TemplateBuilder from "./components/TemplateBuilder";
 import Container from "./components/Container";
+import List from "./components/List";
+import Modal from "./components/Modal";
+import Picture from "./components/Picture";
+import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
+import RichText from "./components/RichText";
+import TemplateBuilder from "./components/TemplateBuilder";
+import TwoColumn from "./components/TwoColumn";
 
 import * as utils from "./styleUtils";
 
+import * as actions from "./actions";
+import * as reducers from "./reducers";
+
 export {
-  RichText,
-  TwoColumn,
-  Picture,
   Carousel,
-  List,
-  ResponsiveBackgroundImage,
-  TemplateBuilder,
   Container,
+  List,
+  Modal,
+  Picture,
+  ResponsiveBackgroundImage,
+  RichText,
+  TemplateBuilder,
+  TwoColumn,
   utils,
+  actions,
+  reducers,
 };

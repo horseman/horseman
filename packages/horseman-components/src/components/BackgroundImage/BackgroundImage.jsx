@@ -9,15 +9,13 @@ const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
 
-  background-image: url(${({ bgImage, width }) => {
+  background-image: url(${({ src, srcset, width }) => {
     let url = "";
     if (!width) {
-      url = bgImage.src;
+      url = src;
     } else {
       // Sort the srcset by width from smallest to largest
-      const sortedSrcset = bgImage.srcset
-        .slice()
-        .sort((a, b) => a.width > b.width);
+      const sortedSrcset = srcset.slice().sort((a, b) => a.width > b.width);
 
       // Find the smallest based on on the width
       const filteredSource = sortedSrcset.filter(set => set.width > width);
@@ -33,11 +31,12 @@ const BackgroundImage = styled.div`
   }});
 `;
 
+BackgroundImage.defaultProps = {
+  srcset: [],
+};
+
 BackgroundImage.propTypes = {
-  /**
-   * The image to be used backgrounding this container
-   */
-  bgImage: PropTypes.shape({ ...imageType }),
+  ...imageType,
 
   /**
    * Will display the background image within srcset that is optimized for the

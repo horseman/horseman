@@ -21,17 +21,17 @@ describe("BackgroundImage", () => {
       },
     ],
   };
+
   test("renders correctly", () => {
-    const wrapper = shallow(
-      <BackgroundImage bgImage={image}>foo</BackgroundImage>,
-    );
+    const wrapper = shallow(<BackgroundImage {...image}>foo</BackgroundImage>);
     expect(wrapper).toMatchSnapshot();
   });
+
   describe("renders correct src with different srcsets", () => {
     image.srcset.forEach(srcset => {
       test(`test ${srcset.src}`, () => {
         const wrapper = shallow(
-          <BackgroundImage bgImage={image} width={srcset.width - 1}>
+          <BackgroundImage {...image} width={srcset.width - 1}>
             foo
           </BackgroundImage>,
         );
@@ -40,7 +40,7 @@ describe("BackgroundImage", () => {
     });
     test("uses the largest image when width is larger than all available srcsets", () => {
       const wrapper = shallow(
-        <BackgroundImage bgImage={image} width={500}>
+        <BackgroundImage {...image} width={500}>
           foo
         </BackgroundImage>,
       );

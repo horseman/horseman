@@ -1,3 +1,7 @@
+1.8.0 / 2017-11-6
+==================
+- Adding VideoPlaceholder
+
 1.7.7 / 2017-11-6
 ==================
 - Adding Carousel component

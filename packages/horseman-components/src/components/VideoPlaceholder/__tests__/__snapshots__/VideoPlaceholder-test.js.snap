@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoPlaceholder renders correctly 1`] = `
+.c0 {
+  padding-top: 56.25%;
+  overflow: visible;
+}
+
+<Wrap
+  className="c0"
+  fill={false}
+  src="default"
+  srcset={
+    Array [
+      Object {
+        "src": "default",
+        "width": 100,
+      },
+      Object {
+        "src": "larger",
+        "width": 200,
+      },
+      Object {
+        "src": "largest",
+        "width": 300,
+      },
+    ]
+  }
+>
+  <styled.div
+    position="center"
+  >
+    <playComponent
+      onClick={[Function]}
+    />
+  </styled.div>
+</Wrap>
+`;

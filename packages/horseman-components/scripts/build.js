@@ -44,6 +44,7 @@ async function buildCjs({ input, file }) {
       "styled-components",
       "prop-types",
       "react-responsive-carousel",
+      "react-modal",
     ],
     plugins: [
       babel({

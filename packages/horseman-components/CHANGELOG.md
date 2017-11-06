@@ -1,10 +1,14 @@
+1.9.0 / 2017-11-6
+==================
+- Modal
+
 1.8.0 / 2017-11-6
 ==================
-- Adding VideoPlaceholder
+- VideoPlaceholder
 
 1.7.7 / 2017-11-6
 ==================
-- Adding Carousel component
+- Carousel
 
 1.7.3 / 2017-11-1
 ==================

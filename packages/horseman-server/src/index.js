@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 import express from "express";
 import path from "path";
-import fs from "fs";
 import compression from "compression";
 
-const runServer = ({ render, template, publicPath, rootDiv }) => {
+const runServer = ({ render, publicPath }) => {
   const app = express();
-  const templateHtml = fs.readFileSync(template, "utf8");
 
   app.use(compression());
   app.use(express.static(publicPath));
+  app.set('view engine', 'ejs')
 
   app.get("*", (req, res) =>
     render(req.path).then(response =>
       res
         .status(response.statusCode || 200)
-        .send(templateHtml.replace(rootDiv, response.html)),
+        .render("index",response.data),
     ),
   );
 
@@ -33,8 +32,6 @@ const config = require(configPath)();
 const defaults = {
   publicPath: path.join(workingDirectory, "public"),
   backendBundle: path.join(workingDirectory, "public", "backend.js"),
-  template: path.join(workingDirectory, "public", "index.tmpl"),
-  rootDiv: '<div id="root"></div>',
 };
 const bundlePath = config.server.backendBundle
   ? config.server.backendBundle

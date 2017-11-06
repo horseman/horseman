@@ -11,7 +11,7 @@ const BackgroundImage = styled.div`
 
   background-image: url(${({ src, srcset, width }) => {
     let url = "";
-    if (!width) {
+    if (!width || srcset.length === 0) {
       url = src;
     } else {
       // Sort the srcset by width from smallest to largest

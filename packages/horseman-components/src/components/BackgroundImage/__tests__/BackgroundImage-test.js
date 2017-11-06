@@ -27,6 +27,15 @@ describe("BackgroundImage", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test("renders correctly without a srcset passed in", () => {
+    const wrapper = shallow(
+      <BackgroundImage src="default" width={10}>
+        foo
+      </BackgroundImage>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe("renders correct src with different srcsets", () => {
     image.srcset.forEach(srcset => {
       test(`test ${srcset.src}`, () => {

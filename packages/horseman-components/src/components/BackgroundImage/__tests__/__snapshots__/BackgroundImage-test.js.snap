@@ -88,3 +88,21 @@ exports[`BackgroundImage renders correctly 1`] = `
   foo
 </div>
 `;
+
+exports[`BackgroundImage renders correctly without a srcset passed in 1`] = `
+.c0 {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(default);
+}
+
+<div
+  className="c0"
+  src="default"
+  width={10}
+>
+  foo
+</div>
+`;

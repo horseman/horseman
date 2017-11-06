@@ -39,7 +39,12 @@ async function buildCjs({ input, file }) {
   // create a bundle
   const bundle = await rollup.rollup({
     input,
-    external: ["react", "styled-components", "prop-types"],
+    external: [
+      "react",
+      "styled-components",
+      "prop-types",
+      "react-responsive-carousel",
+    ],
     plugins: [
       babel({
         runtimeHelpers: true,

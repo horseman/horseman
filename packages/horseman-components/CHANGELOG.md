@@ -1,3 +1,7 @@
+1.7.7 / 2017-11-6
+==================
+- Adding Carousel component
+
 1.7.3 / 2017-11-1
 ==================
 - Fix Picture element bug when srcset widths are not passed in in correct order.

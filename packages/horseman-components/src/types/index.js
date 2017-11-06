@@ -1,4 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import imageType from "./imageObject";
+import imageType from "./imageType";
 
 export { imageType };

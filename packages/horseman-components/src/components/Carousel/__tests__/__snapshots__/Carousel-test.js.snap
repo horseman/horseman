@@ -1,0 +1,490 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+.c0 .carousel .control-arrow,
+.c0 .carousel.carousel-slider .control-arrow {
+  -webkit-transition: all .25s ease-in;
+  -moz-transition: all .25s ease-in;
+  -ms-transition: all .25s ease-in;
+  -o-transition: all .25s ease-in;
+  -webkit-transition: all .25s ease-in;
+  transition: all .25s ease-in;
+  opacity: .4;
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  background: 0 0;
+  border: 0;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.c0 .carousel .control-arrow:hover {
+  opacity: 1;
+}
+
+.c0 .carousel .control-arrow:before,
+.c0 .carousel.carousel-slider .control-arrow:before {
+  margin: 0 5px;
+  display: inline-block;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: '';
+}
+
+.c0 .carousel .control-disabled.control-arrow {
+  opacity: 0;
+  cursor: inherit;
+  display: none;
+}
+
+.c0 .carousel .control-prev.control-arrow {
+  left: 0;
+}
+
+.c0 .carousel .control-prev.control-arrow:before {
+  border-right: 8px solid #fff;
+}
+
+.c0 .carousel .control-next.control-arrow {
+  right: 0;
+}
+
+.c0 .carousel .control-next.control-arrow:before {
+  border-left: 8px solid #fff;
+}
+
+.c0 .carousel {
+  position: relative;
+  width: 100%;
+}
+
+.c0 .carousel * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.c0 .carousel button {
+  outline: 0;
+  border: 0;
+  background: 0 0;
+}
+
+.c0 .carousel img {
+  width: 100%;
+  display: inline-block;
+  pointer-events: none;
+}
+
+.c0 .carousel .carousel {
+  position: relative;
+}
+
+.c0 .carousel .control-arrow {
+  top: 50%;
+  margin-top: -13px;
+  font-size: 18px;
+}
+
+.c0 .carousel .thumbs-wrapper {
+  margin: 20px;
+  overflow: hidden;
+}
+
+.c0 .carousel .thumbs {
+  -webkit-transition: all .15s ease-in;
+  -moz-transition: all .15s ease-in;
+  -ms-transition: all .15s ease-in;
+  -o-transition: all .15s ease-in;
+  -webkit-transition: all .15s ease-in;
+  transition: all .15s ease-in;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  position: relative;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.c0 .carousel .thumb {
+  -webkit-transition: border .15s ease-in;
+  -moz-transition: border .15s ease-in;
+  -ms-transition: border .15s ease-in;
+  -o-transition: border .15s ease-in;
+  -webkit-transition: border .15s ease-in;
+  transition: border .15s ease-in;
+  display: inline-block;
+  width: 80px;
+  margin-right: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 3px solid #fff;
+  padding: 2px;
+}
+
+.c0 .carousel .thumb.selected,
+.c0 .carousel .thumb:hover {
+  border: 3px solid #333;
+  padding: 2px;
+}
+
+.c0 .carousel .thumb img {
+  vertical-align: top;
+}
+
+.c0 .carousel.carousel-slider {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.c0 .carousel.carousel-slider .control-arrow {
+  top: 0;
+  color: #fff;
+  font-size: 26px;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+}
+
+.c0 .carousel.carousel-slider .control-arrow:hover {
+  background: rgba(0,0,0,.2);
+}
+
+.c0 .carousel .slider-wrapper {
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  -webkit-transition: height .15s ease-in;
+  -moz-transition: height .15s ease-in;
+  -ms-transition: height .15s ease-in;
+  -o-transition: height .15s ease-in;
+  -webkit-transition: height .15s ease-in;
+  transition: height .15s ease-in;
+}
+
+.c0 .carousel .slider-wrapper.axis-horizontal .slider {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .carousel .slider-wrapper.axis-horizontal .slider .slide {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+}
+
+.c0 .carousel .slider-wrapper.axis-vertical {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c0 .carousel .slider-wrapper.axis-vertical .slider {
+  -webkit-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c0 .carousel .slider {
+  position: relative;
+  list-style: none;
+  width: 100%;
+}
+
+.c0 .carousel .slider.animated {
+  -webkit-transition: all .35s ease-in-out;
+  -moz-transition: all .35s ease-in-out;
+  -ms-transition: all .35s ease-in-out;
+  -o-transition: all .35s ease-in-out;
+  -webkit-transition: all .35s ease-in-out;
+  transition: all .35s ease-in-out;
+}
+
+.c0 .carousel .slide {
+  min-width: 100%;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  background: #000;
+}
+
+.c0 .carousel .slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+}
+
+.c0 .carousel .slide iframe {
+  display: inline-block;
+  width: calc(100% - 80px);
+  margin: 0 40px 40px;
+  border: 0;
+}
+
+.c0 .carousel .slide .legend {
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -ms-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -45%;
+  width: 90%;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  opacity: .25;
+  -webkit-transition: opacity .35s ease-in-out;
+  -moz-transition: opacity .35s ease-in-out;
+  -ms-transition: opacity .35s ease-in-out;
+  -o-transition: opacity .35s ease-in-out;
+  -webkit-transition: opacity .35s ease-in-out;
+  transition: opacity .35s ease-in-out;
+}
+
+.c0 .carousel .control-dots {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.c0 .carousel .control-dots .dot {
+  -webkit-transition: opacity .25s ease-in;
+  -moz-transition: opacity .25s ease-in;
+  -ms-transition: opacity .25s ease-in;
+  -o-transition: opacity .25s ease-in;
+  -webkit-transition: opacity .25s ease-in;
+  transition: opacity .25s ease-in;
+  opacity: .3;
+  box-shadow: 1px 1px 2px rgba(0,0,0,.9);
+  background: #fff;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.c0 .carousel .control-dots .dot.selected,
+.c0 .carousel .control-dots .dot:hover {
+  opacity: 1;
+}
+
+.c0 .carousel .carousel-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 10px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.9);
+  color: #fff;
+}
+
+.c0 .carousel:hover .slide .legend {
+  opacity: 1;
+}
+
+.c0 .carousel.carousel-slider {
+  margin-bottom: 50px;
+  overflow: visible;
+}
+
+.c0 .carousel.carousel-slider .control-arrow {
+  display: none;
+}
+
+.c0 .carousel.carousel-slider .control-arrow:hover {
+  opacity: 1;
+  background: #4a4a4a;
+}
+
+.c0 .carousel.carousel-slider .control-arrow.control-prev {
+  left: 15px;
+}
+
+.c0 .carousel.carousel-slider .control-arrow.control-next {
+  right: 15px;
+}
+
+.c0 .carousel.carousel-slider .slider {
+  max-height: 685px;
+}
+
+.c0 .carousel.carousel-slider .slide .textWrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  opacity: 1;
+  background: transparent;
+  width: 100%;
+  z-index: 2;
+}
+
+.c0 .carousel.carousel-slider .slide .textWrap .text {
+  font-weight: 300;
+  color: white;
+  max-width: 78%;
+  margin: 0 auto;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.c0 .carousel .control-dots {
+  bottom: -50px;
+}
+
+.c0 .carousel .control-dots .dot {
+  background: #4a4a4a;
+  height: 11px;
+  width: 11px;
+  box-shadow: none;
+}
+
+@media (min-width:960px) {
+  .c0 .carousel .control-dots {
+    bottom: 0;
+  }
+}
+
+@media (min-width:992px) {
+  .c0 .carousel.carousel-slider .control-arrow {
+    display: block;
+    position: absolute;
+    bottom: auto;
+    border-radius: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: #000;
+    height: 47px;
+    width: 47px;
+    opacity: 0.6;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .carousel.carousel-slider .slide .textWrap .text {
+    font-size: 1.5em;
+    line-height: 1.6em;
+  }
+}
+
+@media (min-width:992px) {
+  .c0 .carousel.carousel-slider .slide .textWrap .text {
+    font-size: 2em;
+    line-height: 1.5em;
+  }
+}
+
+<div
+  className="c0"
+>
+  <Carousel
+    autoPlay={false}
+    axis="horizontal"
+    centerMode={false}
+    centerSlidePercentage={80}
+    dynamicHeight={false}
+    emulateTouch={true}
+    infiniteLoop={true}
+    interval={3000}
+    onChange={[Function]}
+    onClickItem={[Function]}
+    onClickThumb={[Function]}
+    selectedItem={0}
+    showArrows={true}
+    showIndicators={true}
+    showStatus={false}
+    showThumbs={false}
+    statusFormatter={[Function]}
+    stopOnHover={true}
+    swipeScrollTolerance={5}
+    transitionTime={350}
+    useKeyboardArrows={false}
+    width="100%"
+  >
+    <div
+      key="default"
+    >
+      <Picture
+        alt=" "
+        src="default"
+        srcset={
+          Array [
+            Object {
+              "src": "foo",
+              "width": 100,
+            },
+            Object {
+              "src": "bar",
+              "width": 200,
+            },
+          ]
+        }
+      />
+    </div>
+    <div
+      key="second"
+    >
+      <Picture
+        alt=" "
+        src="second"
+        srcset={Array []}
+        text="Overlay"
+      />
+      <div>
+        <div
+          className="textWrap"
+        >
+          <div
+            className="text"
+          >
+            Overlay
+          </div>
+        </div>
+        <styled.div />
+      </div>
+    </div>
+  </Carousel>
+</div>
+`;

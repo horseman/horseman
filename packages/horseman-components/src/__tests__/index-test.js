@@ -4,6 +4,7 @@ const components = [
   "RichText",
   "TwoColumn",
   "Picture",
+  "Carousel",
   "List",
   "ResponsiveBackgroundImage",
   "TemplateBuilder",

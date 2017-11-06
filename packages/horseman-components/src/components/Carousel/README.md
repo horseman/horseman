@@ -1,0 +1,117 @@
+This is the carousel. Modified from the third party package: [React Responsive Carousel](https://github.com/leandrowd/react-responsive-carousel).
+
+The overlay only appears when **text** is defined in the **slides** object.
+
+### Examples
+```
+const data = [
+   {
+      "src":"http://s3.amazonaws.com/haleakalatours.com/_small/adobe-stock-31095893.png",
+      "alt":"Test",
+      "text": "This is some really awesome text with a beautiful overlay",
+      "srcset":[
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_small/adobe-stock-31095893.png",
+            "width":320,
+            "height":192
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_medium/adobe-stock-31095893.png",
+            "width":768,
+            "height":462
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_large/adobe-stock-31095893.png",
+            "width":1024,
+            "height":616
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_wide/adobe-stock-31095893.png",
+            "width":2048,
+            "height":1232
+         }
+      ]
+   },
+   {
+      "src":"http://s3.amazonaws.com/haleakalatours.com/_small/Screen-Shot-2017-08-23-at-8.38.46-AM.png",
+      "alt":"Map",
+      "srcset":[
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_small/Screen-Shot-2017-08-23-at-8.38.46-AM.png",
+            "width":320,
+            "height":198
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_medium/Screen-Shot-2017-08-23-at-8.38.46-AM.png",
+            "width":768,
+            "height":475
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_large/Screen-Shot-2017-08-23-at-8.38.46-AM.png",
+            "width":1024,
+            "height":633
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_wide/Screen-Shot-2017-08-23-at-8.38.46-AM.png",
+            "width":2048,
+            "height":1267
+         }
+      ]
+   },
+   {
+      "src":"http://s3.amazonaws.com/haleakalatours.com/_small/rectangle-4-copy.jpg",
+      "alt":"Bird",
+      "srcset":[
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_small/rectangle-4-copy.jpg",
+            "width":320,
+            "height":180
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_medium/rectangle-4-copy.jpg",
+            "width":768,
+            "height":432
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_large/rectangle-4-copy.jpg",
+            "width":1024,
+            "height":576
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_wide/rectangle-4-copy.jpg",
+            "width":2048,
+            "height":1152
+         }
+      ]
+   },
+   {
+      "src":"http://s3.amazonaws.com/haleakalatours.com/_small/rectangle-4@3x.jpg",
+      "alt":"Hills",
+      "srcset":[
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_small/rectangle-4@3x.jpg",
+            "width":320,
+            "height":180
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_medium/rectangle-4@3x.jpg",
+            "width":768,
+            "height":432
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_large/rectangle-4@3x.jpg",
+            "width":1024,
+            "height":576
+         },
+         {
+            "src":"http://s3.amazonaws.com/haleakalatours.com/_wide/rectangle-4@3x.jpg",
+            "width":2048,
+            "height":1152
+         }
+      ]
+   }
+];
+
+
+<Slider images={data} />
+```

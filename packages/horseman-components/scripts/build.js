@@ -45,6 +45,7 @@ async function buildCjs({ input, file }) {
       "prop-types",
       "react-responsive-carousel",
       "react-modal",
+      "react-onclickoutside",
     ],
     plugins: [
       babel({

@@ -1,15 +1,16 @@
 import * as HorsemanComponents from "../index";
 
 const components = [
-  "RichText",
-  "TwoColumn",
-  "Picture",
   "Carousel",
-  "List",
-  "ResponsiveBackgroundImage",
-  "TemplateBuilder",
   "Container",
+  "List",
   "Modal",
+  "NavList",
+  "Picture",
+  "ResponsiveBackgroundImage",
+  "RichText",
+  "TemplateBuilder",
+  "TwoColumn",
 ];
 
 const exportedUtils = ["media"];

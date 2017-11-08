@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavList dropdown container 1`] = `
+.c0 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+<div
+  className="c0"
+>
+  foo
+</div>
+`;
+
+exports[`NavList item container 1`] = `
+.c0 {
+  position: relative;
+  overflow: visible;
+  margin-right: 1em;
+}
+
+.c0:last-child {
+  margin-right: 0;
+}
+
+<li
+  className="c0"
+>
+  foo
+</li>
+`;
+
+exports[`NavList renders correctly 1`] = `
+<styled.ul>
+  <styled.li
+    key="foo"
+  >
+    <navItem
+      onClick={[Function]}
+      text="foo"
+      to="#"
+    />
+  </styled.li>
+  <styled.li
+    key="bar"
+  >
+    <navItem
+      onClick={[Function]}
+      subnav={
+        Array [
+          Object {
+            "text": "baz",
+            "to": "biz",
+          },
+        ]
+      }
+      text="bar"
+      to="#"
+    />
+  </styled.li>
+</styled.ul>
+`;

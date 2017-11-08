@@ -2,6 +2,7 @@ import Carousel from "./components/Carousel";
 import Container from "./components/Container";
 import List from "./components/List";
 import Modal from "./components/Modal";
+import NavList from "./components/NavList";
 import Picture from "./components/Picture";
 import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import RichText from "./components/RichText";
@@ -18,6 +19,7 @@ export {
   Container,
   List,
   Modal,
+  NavList,
   Picture,
   ResponsiveBackgroundImage,
   RichText,

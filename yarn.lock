@@ -2471,6 +2471,10 @@ react-modal@^3.1.0:
     exenv "^1.2.0"
     prop-types "^15.5.10"
 
+react-onclickoutside@^6.6.3:
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.6.3.tgz#f3b9226f4541039d6d5a4a6120c4dfffcf7de60c"
+
 react-responsive-carousel@^3.1.28:
   version "3.1.28"
   resolved "https://registry.yarnpkg.com/react-responsive-carousel/-/react-responsive-carousel-3.1.28.tgz#4d7bf1afc1789e301125d96a9966245e578261ad"

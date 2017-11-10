@@ -15,14 +15,16 @@ const components = [
 
 const exportedUtils = ["media"];
 
-const exportedActions = ["modal"];
+const exportedActions = ["modal", "menus"];
 
 describe("horseman.js index", () => {
   describe("should export", () => {
     describe("components", () => {
       test("the Correct Number of items", () => {
         expect(Object.keys(HorsemanComponents)).toHaveLength(
-          components.length + exportedUtils.length + exportedActions.length * 2,
+          // We export the components plus the `actions`, `reducers`, and
+          // `utils` keys
+          components.length + 3,
         );
       });
       components.forEach(component => {

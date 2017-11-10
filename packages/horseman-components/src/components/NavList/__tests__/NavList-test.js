@@ -11,7 +11,10 @@ const Item = ({ text }) => <div>{text}</div>;
 const Dropdown = ({ nav }) => <li>{nav.map(n => <ul>{n.text}</ul>)}</li>;
 
 describe("NavList", () => {
+  const toggleDropdown = jest.fn();
+
   const data = {
+    toggleDropdown,
     navItem: Item,
     dropdown: Dropdown,
     nav: [
@@ -22,10 +25,21 @@ describe("NavList", () => {
       {
         to: "#",
         text: "bar",
+        open: true,
         subnav: [
           {
             to: "biz",
             text: "baz",
+          },
+        ],
+      },
+      {
+        to: "#",
+        text: "bang",
+        subnav: [
+          {
+            to: "boom",
+            text: "boom",
           },
         ],
       },

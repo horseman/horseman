@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
 import modal from "./modal";
+import menus from "./menus";
 
-export { modal };
+export { modal, menus };

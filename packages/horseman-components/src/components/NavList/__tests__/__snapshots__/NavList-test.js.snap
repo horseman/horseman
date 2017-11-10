@@ -49,6 +49,7 @@ exports[`NavList renders correctly 1`] = `
   >
     <navItem
       onClick={[Function]}
+      open={true}
       subnav={
         Array [
           Object {
@@ -58,6 +59,45 @@ exports[`NavList renders correctly 1`] = `
         ]
       }
       text="bar"
+      to="#"
+    />
+    <OnClickOutside(styled.div)
+      eventTypes={
+        Array [
+          "click",
+        ]
+      }
+      excludeScrollbar={false}
+      outsideClickIgnoreClass="ignore-react-onclickoutside"
+      preventDefault={false}
+      stopPropagation={false}
+    >
+      <dropdown
+        nav={
+          Array [
+            Object {
+              "text": "baz",
+              "to": "biz",
+            },
+          ]
+        }
+      />
+    </OnClickOutside(styled.div)>
+  </styled.li>
+  <styled.li
+    key="bang"
+  >
+    <navItem
+      onClick={[Function]}
+      subnav={
+        Array [
+          Object {
+            "text": "boom",
+            "to": "boom",
+          },
+        ]
+      }
+      text="bang"
       to="#"
     />
   </styled.li>

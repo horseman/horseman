@@ -80,6 +80,24 @@ NavList.propTypes = {
   ).isRequired,
 
   /**
+   * Will be rendered in the slot for the item
+   */
+  navItem: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
+
+  /**
+   * Will be rendered when a dropdown should be displayed.
+   */
+  dropdown: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
+
+  /**
    * This function will be called when a NavItem, having a subnav, is clicked
    */
   toggleDropdown: PropTypes.func,

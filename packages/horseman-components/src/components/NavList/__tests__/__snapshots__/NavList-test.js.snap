@@ -38,7 +38,7 @@ exports[`NavList renders correctly 1`] = `
   <styled.li
     key="foo"
   >
-    <navItem
+    <Item
       onClick={[Function]}
       text="foo"
       to="#"
@@ -47,7 +47,7 @@ exports[`NavList renders correctly 1`] = `
   <styled.li
     key="bar"
   >
-    <navItem
+    <Item
       onClick={[Function]}
       open={true}
       subnav={
@@ -72,7 +72,7 @@ exports[`NavList renders correctly 1`] = `
       preventDefault={false}
       stopPropagation={false}
     >
-      <dropdown
+      <Dropdown
         nav={
           Array [
             Object {
@@ -87,7 +87,7 @@ exports[`NavList renders correctly 1`] = `
   <styled.li
     key="bang"
   >
-    <navItem
+    <Item
       onClick={[Function]}
       subnav={
         Array [

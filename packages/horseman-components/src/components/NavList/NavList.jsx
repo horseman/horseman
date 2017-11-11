@@ -20,6 +20,8 @@ const StyledNavList = styled.ul`
 
 const NavList = ({ navItem, dropdown, nav, toggleDropdown, ...rest }) => {
   // Iterate through each navItem and create out list item structure.
+  const NavComponent = navItem;
+  const DropdownComponent = dropdown;
   const items = nav.map(item => {
     const hasChildren = item.subnav && item.subnav.length > 0;
 
@@ -32,7 +34,7 @@ const NavList = ({ navItem, dropdown, nav, toggleDropdown, ...rest }) => {
 
     return (
       <ItemContainer key={item.text}>
-        <navItem
+        <NavComponent
           {...item}
           onClick={e =>
             hasChildren && !item.open ? toggleDropdown(e, item) : () => {}
@@ -40,7 +42,7 @@ const NavList = ({ navItem, dropdown, nav, toggleDropdown, ...rest }) => {
         />
         {item.open && (
           <EnhancedDropdownContainer eventTypes={["click"]}>
-            <dropdown nav={item.subnav} />
+            <DropdownComponent nav={item.subnav} />
           </EnhancedDropdownContainer>
         )}
       </ItemContainer>

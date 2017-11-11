@@ -5,7 +5,7 @@ The navList is a grouping of [NavItems](#navitem).
 const data = [{
   to: "#",
   text: "Tours",
-  opened: true,
+  open: true,
   subnav: [
     {
       to: "#",

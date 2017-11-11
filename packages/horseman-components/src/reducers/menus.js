@@ -22,10 +22,10 @@ export default function menus(state = initialState, action) {
 
         // We've found the new item, toggle it.
         if (newItem.text === action.itemTitle) {
-          newItem.opened = !newItem.opened;
-        } else if (newItem.opened) {
+          newItem.open = !newItem.open;
+        } else if (newItem.open) {
           // All previously opened nav items should be closed.
-          newItem.opened = false;
+          newItem.open = false;
         }
 
         // Immutably copy the subnav to the new item.
@@ -51,8 +51,8 @@ export default function menus(state = initialState, action) {
       const newMenuState = selectedMenu.map(item => {
         const newItem = { ...item };
 
-        if (newItem.opened) {
-          newItem.opened = false;
+        if (newItem.open) {
+          newItem.open = false;
         }
 
         // Immutably copy the subnav to the new item.

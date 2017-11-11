@@ -6,14 +6,14 @@ describe("menus reducer", () => {
       {
         to: "#",
         text: "Foo",
-        opened: false,
+        open: false,
       },
     ],
     secondary: [
       {
         to: "#",
         text: "Foo",
-        opened: true,
+        open: true,
       },
     ],
   };
@@ -36,7 +36,7 @@ describe("menus reducer", () => {
       main: [
         {
           ...state.main[0],
-          opened: true,
+          open: true,
         },
       ],
     });
@@ -53,7 +53,7 @@ describe("menus reducer", () => {
       secondary: [
         {
           ...state.secondary[0],
-          opened: false,
+          open: false,
         },
       ],
     });

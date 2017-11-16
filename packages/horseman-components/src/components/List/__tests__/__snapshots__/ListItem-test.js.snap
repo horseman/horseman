@@ -2,7 +2,7 @@
 
 exports[`ListItem renders correctly with a mobileBase > 1 1`] = `
 .c0 {
-  width: calc(50% - NaNpx);
+  width: calc(50% - 15px);
   margin-top: 30px;
 }
 

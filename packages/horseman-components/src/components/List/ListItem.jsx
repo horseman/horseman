@@ -14,7 +14,7 @@ const getItemWidth = (mobileBase, gutter) => {
 };
 
 const ListItem = styled.div`
-  width: ${({ mobileBase }) => getItemWidth(mobileBase)};
+  width: ${({ mobileBase, gutter }) => getItemWidth(mobileBase, gutter)};
   margin-top: ${({ gutter }) => gutter}px;
 
   &:nth-child(-n + ${props => props.mobileBase}) {

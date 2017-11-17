@@ -3,7 +3,6 @@ import * as HorsemanComponents from "../index";
 const components = [
   "Carousel",
   "Container",
-  "Dimensions",
   "List",
   "Modal",
   "NavList",
@@ -13,6 +12,7 @@ const components = [
   "TemplateBuilder",
   "TwoColumn",
 ];
+const providers = ["dimensions"];
 
 const exportedUtils = ["media"];
 
@@ -23,9 +23,9 @@ describe("horseman.js index", () => {
     describe("components", () => {
       test("the Correct Number of items", () => {
         expect(Object.keys(HorsemanComponents)).toHaveLength(
-          // We export the components plus the `actions`, `reducers`, and
+          // We export the components, providers plus the `actions`, `reducers`, and
           // `utils` keys
-          components.length + 3,
+          components.length + providers.length + 3,
         );
       });
       components.forEach(component => {
@@ -34,6 +34,16 @@ describe("horseman.js index", () => {
           expect(HorsemanComponents[component]).toEqual(
             // eslint-disable-next-line import/no-dynamic-require
             require(`../components/${component}`).default,
+          );
+        });
+      });
+    });
+    describe("providers", () => {
+      providers.forEach(provider => {
+        test(provider, () => {
+          expect(HorsemanComponents[provider]).toEqual(
+            // eslint-disable-next-line import/no-dynamic-require
+            require(`../providers/${provider}`).default,
           );
         });
       });

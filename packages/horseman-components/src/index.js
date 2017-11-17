@@ -1,6 +1,6 @@
 import Carousel from "./components/Carousel";
 import Container from "./components/Container";
-import Dimensions from "./components/Dimensions";
+import dimensions from "./providers/dimensions";
 import List from "./components/List";
 import Modal from "./components/Modal";
 import NavList from "./components/NavList";
@@ -18,7 +18,7 @@ import * as reducers from "./reducers";
 export {
   Carousel,
   Container,
-  Dimensions,
+  dimensions,
   List,
   Modal,
   NavList,

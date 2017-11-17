@@ -3,6 +3,7 @@ import * as HorsemanComponents from "../index";
 const components = [
   "Carousel",
   "Container",
+  "Dimensions",
   "List",
   "Modal",
   "NavList",

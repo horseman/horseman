@@ -44,6 +44,7 @@ async function buildCjs({ input, file }) {
       "styled-components",
       "prop-types",
       "react-responsive-carousel",
+      "element-resize-detector",
       "react-modal",
       "react-onclickoutside",
     ],

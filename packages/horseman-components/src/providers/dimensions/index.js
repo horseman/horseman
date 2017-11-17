@@ -68,7 +68,7 @@ export default Component => {
             }}
             style={{ ...styles.component }}
           >
-            {this.state.loaded && this.state.width > 0 ? (
+            {this.state.loaded ? (
               <Component
                 {...this.props}
                 width={this.state.width}

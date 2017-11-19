@@ -45,6 +45,8 @@ export default Component => {
     }
 
     render() {
+      // remove height: 100% from wrap due to conflicts. If it's needed to
+      // be added back in, we'll have to figure out a different solution
       const styles = {
         wrap: {
           position: "relative",

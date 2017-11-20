@@ -34,7 +34,7 @@ exports[`Modal renders correctly 1`] = `
     }
   }
 >
-  <closeButton
+  <close
     onClick={[Function]}
   />
 </Modal>

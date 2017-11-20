@@ -78,7 +78,11 @@ Modal.propTypes = {
   /**
    * The component to be rendered in the close button spot
    */
-  closeButton: PropTypes.node.isRequired,
+  closeButton: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.element,
+  ]).isRequired,
 };
 
 export default Modal;

@@ -3,17 +3,21 @@ import { shallow } from "enzyme";
 
 import Modal from "../";
 
+const close = () => <div>Close</div>;
+const div = () => <div />;
+const span = () => <span />;
+
 describe("Modal", () => {
   const data = {
     handleClose: () => {},
     mappings: {
-      div: <div>div</div>,
-      span: <span>span</span>,
+      div,
+      span,
     },
     contentProps: {
       foo: "bar",
     },
-    closeButton: <div>close</div>,
+    closeButton: close,
   };
   test("renders correctly", () => {
     const wrapper = shallow(<Modal {...data} />);

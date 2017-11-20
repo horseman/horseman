@@ -7,7 +7,9 @@ import { imageType } from "../../types";
 import ResponsiveBackgroundImage from "../ResponsiveBackgroundImage";
 import PlayButtonContainer from "./PlayButtonContainer";
 
-const StyledVideoPlaceholder = styled(ResponsiveBackgroundImage)`
+const StyledVideoPlaceholder = styled(({ fill, ...rest }) => (
+  <ResponsiveBackgroundImage {...rest} />
+))`
   /**
    * establish a 16/9 aspect ratio for the default video, if we otherwise don't
    * want to fill the container.
@@ -53,7 +55,4 @@ VideoPlaceholder.propTypes = {
   bgImage: PropTypes.shape({ ...imageType }).isRequired,
 };
 
-/**
- * @component
- */
 export default VideoPlaceholder;

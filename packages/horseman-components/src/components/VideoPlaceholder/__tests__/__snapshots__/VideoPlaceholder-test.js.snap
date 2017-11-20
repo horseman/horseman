@@ -7,7 +7,7 @@ exports[`VideoPlaceholder can fill it's container 1`] = `
   height: 100%;
 }
 
-<Wrap
+<Component
   className="c0"
   fill={true}
   src="default"
@@ -33,7 +33,7 @@ exports[`VideoPlaceholder can fill it's container 1`] = `
   >
     <div />
   </styled.div>
-</Wrap>
+</Component>
 `;
 
 exports[`VideoPlaceholder renders correctly 1`] = `
@@ -43,7 +43,7 @@ exports[`VideoPlaceholder renders correctly 1`] = `
   height: 100%;
 }
 
-<Wrap
+<Component
   className="c0"
   fill={false}
   src="default"
@@ -69,5 +69,5 @@ exports[`VideoPlaceholder renders correctly 1`] = `
   >
     <div />
   </styled.div>
-</Wrap>
+</Component>
 `;

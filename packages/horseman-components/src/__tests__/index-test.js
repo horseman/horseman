@@ -11,6 +11,7 @@ const components = [
   "RichText",
   "TemplateBuilder",
   "TwoColumn",
+  "VideoPlaceholder",
 ];
 const providers = ["dimensions"];
 

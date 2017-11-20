@@ -9,6 +9,7 @@ import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import RichText from "./components/RichText";
 import TemplateBuilder from "./components/TemplateBuilder";
 import TwoColumn from "./components/TwoColumn";
+import VideoPlaceholder from "./components/VideoPlaceholder";
 
 import * as utils from "./styleUtils";
 
@@ -18,7 +19,6 @@ import * as reducers from "./reducers";
 export {
   Carousel,
   Container,
-  dimensions,
   List,
   Modal,
   NavList,
@@ -27,7 +27,9 @@ export {
   RichText,
   TemplateBuilder,
   TwoColumn,
-  utils,
+  VideoPlaceholder,
   actions,
+  dimensions,
   reducers,
+  utils,
 };

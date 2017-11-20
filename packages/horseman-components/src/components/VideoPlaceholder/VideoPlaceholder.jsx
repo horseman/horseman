@@ -1,9 +1,10 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 
-import ResponsiveBackgroundImage from "../ResponsiveBackgroundImage";
 import { imageType } from "../../types";
+
+import ResponsiveBackgroundImage from "../ResponsiveBackgroundImage";
 import PlayButtonContainer from "./PlayButtonContainer";
 
 const StyledVideoPlaceholder = styled(ResponsiveBackgroundImage)`
@@ -11,32 +12,15 @@ const StyledVideoPlaceholder = styled(ResponsiveBackgroundImage)`
    * establish a 16/9 aspect ratio for the default video, if we otherwise don't
    * want to fill the container.
    */
-  padding-top: ${props => (props.fill ? 0 : `${9 / 16 * 100}%`)};
+  padding-top: ${({ fill }) => (fill ? 0 : 9 / 16 * 100)}%;
   overflow: visible;
-
-  ${({ fill }) =>
-    fill &&
-    css`
-      position: absolute;
-      padding-top: 56.25%;
-      top: 0;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      height: 100%;
-    `};
+  height: 100%;
 `;
 
-const VideoPlaceholder = ({
-  bgImage,
-  playPosition,
-  onClick,
-  fill,
-  playComponent,
-}) => (
+const VideoPlaceholder = ({ bgImage, playPosition, playButton, fill }) => (
   <StyledVideoPlaceholder {...bgImage} fill={fill}>
     <PlayButtonContainer position={playPosition}>
-      <playComponent onClick={onClick} />
+      {playButton}
     </PlayButtonContainer>
   </StyledVideoPlaceholder>
 );
@@ -44,7 +28,6 @@ const VideoPlaceholder = ({
 VideoPlaceholder.defaultProps = {
   fill: false,
   playPosition: "center",
-  onClick: () => {},
 };
 
 VideoPlaceholder.propTypes = {
@@ -60,19 +43,14 @@ VideoPlaceholder.propTypes = {
   playPosition: PropTypes.oneOf(["left", "right", "center"]),
 
   /**
+   * The button to be rendered representing "play".
+   */
+  playButton: PropTypes.node.isRequired,
+
+  /**
    * What image will be used for the video placeholder image
    */
   bgImage: PropTypes.shape({ ...imageType }).isRequired,
-
-  /**
-   * What should happen when the play button is clicked
-   */
-  onClick: PropTypes.func,
-
-  /**
-   * Will be rendered as the play button overlaying the video image.
-   */
-  playComponent: PropTypes.node.isRequired,
 };
 
 /**

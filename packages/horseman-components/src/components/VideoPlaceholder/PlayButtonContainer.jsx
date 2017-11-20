@@ -6,13 +6,12 @@ import media from "../../styleUtils/media";
  * Container for the play button that will position it centered left or right.
  * This container is absolutely positioned within the VideoPlaceholder.
  *
- * NOTE: in mobile the play button is centered by default; left & right are only for bigger screens
+ * NOTE: in mobile the play button is centered by default; left & right are
+ * only for bigger screens
  */
 const PlayButtonContainer = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
   ${media.mdAndUp(css`
     ${props => {

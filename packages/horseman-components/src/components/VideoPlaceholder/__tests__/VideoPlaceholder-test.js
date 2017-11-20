@@ -23,7 +23,14 @@ describe("VideoPlaceholder", () => {
   };
   test("renders correctly", () => {
     const wrapper = shallow(
-      <VideoPlaceholder playComponent={<div />} bgImage={image} />,
+      <VideoPlaceholder playButton={<div />} bgImage={image} />,
+    ).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  test("can fill it's container", () => {
+    const wrapper = shallow(
+      <VideoPlaceholder playButton={<div />} bgImage={image} fill />,
     ).dive();
     expect(wrapper).toMatchSnapshot();
   });

@@ -11,6 +11,7 @@ const Modal = ({
   closeButton,
 }) => {
   const ContentComponent = mappings[type];
+  const CloseComponent = closeButton;
   const content = type ? <ContentComponent {...contentProps} /> : null;
   return (
     <ReactModal
@@ -37,7 +38,7 @@ const Modal = ({
       }}
     >
       {content}
-      <closeButton onClick={handleClose} />
+      <CloseComponent onClick={handleClose} />
     </ReactModal>
   );
 };

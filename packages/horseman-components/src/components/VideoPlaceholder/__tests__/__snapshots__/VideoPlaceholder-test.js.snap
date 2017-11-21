@@ -5,6 +5,7 @@ exports[`VideoPlaceholder can fill it's container 1`] = `
   padding-top: 0%;
   overflow: visible;
   height: 100%;
+  position: relative;
 }
 
 <Component
@@ -41,6 +42,7 @@ exports[`VideoPlaceholder renders correctly 1`] = `
   padding-top: 56.25%;
   overflow: visible;
   height: 100%;
+  position: relative;
 }
 
 <Component

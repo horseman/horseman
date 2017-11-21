@@ -17,6 +17,7 @@ const StyledVideoPlaceholder = styled(({ fill, ...rest }) => (
   padding-top: ${({ fill }) => (fill ? 0 : 9 / 16 * 100)}%;
   overflow: visible;
   height: 100%;
+  position: relative;
 `;
 
 const VideoPlaceholder = ({ bgImage, playPosition, playButton, fill }) => (

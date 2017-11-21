@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordions handles state correctly opens items when you click the label 1`] = `
+<section>
+  <UserWrapper
+    key="FooBar"
+  >
+    <UserLabel
+      aria-controls="FooBar"
+      aria-expanded={true}
+      onClick={[Function]}
+      opened={true}
+      to="#"
+    >
+      Foo Bar?
+    </UserLabel>
+    <UserContent
+      aria-hidden={false}
+      id="FooBar"
+      opened={true}
+    >
+      Hello World
+    </UserContent>
+  </UserWrapper>
+  <UserWrapper
+    key="BizBaz"
+  >
+    <UserLabel
+      aria-controls="BizBaz"
+      aria-expanded={false}
+      onClick={[Function]}
+      opened={false}
+      to="#"
+    >
+      Biz Baz
+    </UserLabel>
+    <UserContent
+      aria-hidden={true}
+      id="BizBaz"
+      opened={false}
+    >
+      lorem ipsum
+    </UserContent>
+  </UserWrapper>
+</section>
+`;
+
+exports[`Accordions renders correctly 1`] = `
+<section>
+  <UserWrapper
+    key="FooBar"
+  >
+    <UserLabel
+      aria-controls="FooBar"
+      aria-expanded={false}
+      onClick={[Function]}
+      opened={false}
+      to="#"
+    >
+      Foo Bar?
+    </UserLabel>
+    <UserContent
+      aria-hidden={true}
+      id="FooBar"
+      opened={false}
+    >
+      Hello World
+    </UserContent>
+  </UserWrapper>
+  <UserWrapper
+    key="BizBaz"
+  >
+    <UserLabel
+      aria-controls="BizBaz"
+      aria-expanded={false}
+      onClick={[Function]}
+      opened={false}
+      to="#"
+    >
+      Biz Baz
+    </UserLabel>
+    <UserContent
+      aria-hidden={true}
+      id="BizBaz"
+      opened={false}
+    >
+      lorem ipsum
+    </UserContent>
+  </UserWrapper>
+</section>
+`;

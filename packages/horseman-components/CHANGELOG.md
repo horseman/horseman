@@ -1,3 +1,10 @@
+1.12.0 / 2017-11-21
+==================
+- Update dimensions provider to only update if the new width has passed a
+boundary traversal indicated by the `boundaries` prop on the wrapped component
+- Add a onResize prop for `dimensions` wrapped component that will be fired when
+a resize event is triggered.
+
 1.11.0 / 2017-11-21
 ==================
 - Accordions

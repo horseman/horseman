@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const elementResizeDetectorMaker =
   typeof window !== "undefined"
@@ -9,8 +10,20 @@ const erd = elementResizeDetectorMaker({
   strategy: "scroll",
 });
 
+export const shouldUpdate = ({ oldWidth, newWidth, boundaries }) =>
+  boundaries.filter(boundary => {
+    if (oldWidth === newWidth) {
+      return false;
+    }
+
+    return (
+      boundary === newWidth ||
+      (boundary - oldWidth) * (boundary - newWidth) <= 0
+    );
+  }).length > 0;
+
 export default Component => {
-  class Wrap extends React.Component {
+  class Dimensions extends React.Component {
     constructor() {
       super();
 
@@ -36,17 +49,33 @@ export default Component => {
     }
 
     handleResize() {
-      const component = this.wrap;
+      const { clientHeight: height, clientWidth: width } = this.wrap;
+
+      const oldWidth = this.state.width;
+
+      // We want to only handle a resize if we have traversed a boundary point
+      // if no boundary points have been included, always update.
+      if (
+        this.props.boundaries.length > 0 &&
+        !shouldUpdate({
+          oldWidth,
+          newWidth: width,
+          boundaries: this.props.boundaries,
+        })
+      ) {
+        return;
+      }
+
       this.setState({
+        width,
+        height,
         loaded: true,
-        width: component.clientWidth,
-        height: component.clientHeight,
       });
+
+      this.props.onResize({ height, width });
     }
 
     render() {
-      // remove height: 100% from wrap due to conflicts. If it's needed to
-      // be added back in, we'll have to figure out a different solution
       const styles = {
         wrap: {
           position: "relative",
@@ -82,5 +111,19 @@ export default Component => {
     }
   }
 
-  return Wrap;
+  Dimensions.defaultProps = {
+    onResize: () => {},
+    boundaries: [],
+  };
+
+  Dimensions.propTypes = {
+    /**
+     * Callback that will be fired when a resize is triggered.
+     */
+    onResize: PropTypes.func,
+
+    boundaries: PropTypes.arrayOf(PropTypes.number),
+  };
+
+  return Dimensions;
 };

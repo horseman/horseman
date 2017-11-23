@@ -79,6 +79,7 @@ export default Component => {
       const styles = {
         wrap: {
           position: "relative",
+          height: "100%",
         },
         component: {
           height: "100%",

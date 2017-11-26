@@ -17,15 +17,16 @@ export const Video = styled.video.attrs({
   playsInline: true,
 })`
   position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  z-index: 0;
-  width: 100vw;
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
   height: auto;
+  min-width: 100%;
+  min-height: 100%;
+
+  z-index: 0;
+
   background: white;
-  background-position: center center;
-  background-size: cover;
   display: block;
 `;

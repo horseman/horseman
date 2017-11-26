@@ -1,9 +1,7 @@
 ```
 const data = {
-video: {
-    src: "/path/to/video.mp4",
-    type: "video/mp4",
-  }
+  src: "/path/to/video.mp4",
+  type: "video/mp4",
 };
 
 <BackgroundVideo {...data}>

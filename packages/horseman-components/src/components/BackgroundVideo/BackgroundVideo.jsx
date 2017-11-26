@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import { ComponentWrapper, Content, Video } from "./Wrappers";
 
-const BackgroundVideo = ({ children, video }) => (
+const BackgroundVideo = ({ children, ...rest }) => (
   <ComponentWrapper>
     <Video>
-      <source {...video} />
+      <source {...rest} />
     </Video>
     <Content>{children}</Content>
   </ComponentWrapper>

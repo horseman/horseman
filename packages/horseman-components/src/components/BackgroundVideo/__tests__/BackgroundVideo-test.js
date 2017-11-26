@@ -7,12 +7,7 @@ import { Video, Content } from "../Wrappers";
 describe("BackgroundVideo", () => {
   test("renders correctly", () => {
     const wrapper = shallow(
-      <BackgroundVideo
-        video={{
-          src: "foo",
-          type: "bar",
-        }}
-      >
+      <BackgroundVideo src="foo" type="bar">
         foo
       </BackgroundVideo>,
     ).dive();

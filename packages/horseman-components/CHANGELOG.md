@@ -1,3 +1,7 @@
+1.13.0 / 2017-11-26
+==================
+- Add BackgroundVideo
+
 1.12.0 / 2017-11-21
 ==================
 - Update dimensions provider to only update if the new width has passed a

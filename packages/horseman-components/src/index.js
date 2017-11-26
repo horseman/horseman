@@ -1,3 +1,4 @@
+import BackgroundVideo from "./components/BackgroundVideo";
 import Carousel from "./components/Carousel";
 import Container from "./components/Container";
 import dimensions from "./providers/dimensions";
@@ -17,6 +18,7 @@ import * as actions from "./actions";
 import * as reducers from "./reducers";
 
 export {
+  BackgroundVideo,
   Carousel,
   Container,
   List,

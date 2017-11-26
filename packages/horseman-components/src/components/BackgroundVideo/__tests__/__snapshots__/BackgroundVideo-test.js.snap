@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackgroundVideo Content 1`] = `
+.c0 {
+  position: relative;
+  z-index: 1;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`BackgroundVideo Video 1`] = `
+.c0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  z-index: 0;
+  width: 100vw;
+  height: auto;
+  background: white;
+  background-position: center center;
+  background-size: cover;
+  display: block;
+}
+
+<video
+  autoPlay={true}
+  className="c0"
+  loop={true}
+  muted={true}
+  playsInline={true}
+/>
+`;
+
+exports[`BackgroundVideo renders correctly 1`] = `
+.c0 {
+  position: relative;
+  overflow: hidden;
+}
+
+<div
+  className="c0"
+>
+  <styled.video>
+    <source
+      src="foo"
+      type="bar"
+    />
+  </styled.video>
+  <styled.div>
+    foo
+  </styled.div>
+</div>
+`;

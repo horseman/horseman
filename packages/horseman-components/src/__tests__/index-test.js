@@ -1,6 +1,7 @@
 import * as HorsemanComponents from "../index";
 
 const components = [
+  "BackgroundVideo",
   "Carousel",
   "Container",
   "List",

@@ -22,14 +22,23 @@ describe("TemplateBuilder", () => {
     },
   ];
 
-  const mappings = {
-    content: Content,
-    image: Image,
+  const resolver = type => {
+    switch (type) {
+      case "content": {
+        return Content;
+      }
+      case "image": {
+        return Image;
+      }
+      default: {
+        return null;
+      }
+    }
   };
 
   test("renders correctly", () => {
     const wrapper = shallow(
-      <TemplateBuilder data={data} mappings={mappings} />,
+      <TemplateBuilder data={data} resolver={resolver} />,
     );
     expect(wrapper).toMatchSnapshot();
   });

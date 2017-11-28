@@ -1,6 +1,7 @@
 1.13.1 / 2017-11-26
 ==================
 - Add BackgroundVideo
+- Update TwoColumn to accept dynamic breakpoint
 
 1.12.0 / 2017-11-21
 ==================

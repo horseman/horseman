@@ -59,4 +59,30 @@ describe("TwoColumn", () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  test("Renders the column correct with custom named breakpoint", () => {
+    const tree = renderer
+      .create(
+        <TwoColumn
+          gutter={50}
+          breakpoint="smAndUp"
+          firstCol={first}
+          secondCol={second}
+          columnConfig={[
+            {
+              gutter: 10,
+              basis: 30,
+              order: 3,
+            },
+            {
+              gutter: 20,
+              basis: 70,
+              order: 2,
+            },
+          ]}
+        />,
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

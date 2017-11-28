@@ -8,16 +8,18 @@ const Column = styled.div`
   overflow: hidden;
   position: relative;
 
-  ${media.mdAndUp(css`
-    flex-basis: calc(${({ basis, gutter }) => `${basis}% - ${gutter}px`});
-    order: 0;
-  `)};
+  ${({ breakpoint }) =>
+    media[breakpoint](css`
+      flex-basis: calc(${({ basis, gutter }) => `${basis}% - ${gutter}px`});
+      order: 0;
+    `)};
 `;
 
 Column.defaultProps = {
   order: 0,
   basis: 50,
   gutter: 10,
+  breakpoint: "mdAndUp",
 };
 
 Column.propTypes = {
@@ -35,6 +37,11 @@ Column.propTypes = {
    * Adds order on mobile viewports
    */
   order: PropTypes.number,
+
+  /**
+   * The breakpoint at which the layout will go from stacked to two columns
+   */
+  breakpoint: PropTypes.string,
 };
 
 export default Column;

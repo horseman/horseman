@@ -11,17 +11,28 @@ const StyledTwoColumn = styled.div`
 `;
 
 const TwoColumn = ({
-  gutter,
+  breakpoint,
   columnConfig,
   firstCol,
-  secondCol,
+  gutter,
   mobileFlip,
+  secondCol,
 }) => (
   <StyledTwoColumn>
-    <Column gutter={gutter / 2} order={mobileFlip ? 2 : 1} {...columnConfig[0]}>
+    <Column
+      breakpoint={breakpoint}
+      gutter={gutter / 2}
+      order={mobileFlip ? 2 : 1}
+      {...columnConfig[0]}
+    >
       {firstCol}
     </Column>
-    <Column gutter={gutter / 2} order={mobileFlip ? 1 : 2} {...columnConfig[1]}>
+    <Column
+      breakpoint={breakpoint}
+      gutter={gutter / 2}
+      order={mobileFlip ? 1 : 2}
+      {...columnConfig[1]}
+    >
       {secondCol}
     </Column>
   </StyledTwoColumn>
@@ -30,6 +41,7 @@ const TwoColumn = ({
 TwoColumn.defaultProps = {
   columnConfig: [{}, {}],
   gutter: 10,
+  breakpoint: "mdAndUp",
 };
 
 TwoColumn.propTypes = {
@@ -44,6 +56,11 @@ TwoColumn.propTypes = {
   secondCol: PropTypes.node.isRequired,
 
   /**
+   * The amount of space that will be between the two columns
+   */
+  gutter: PropTypes.number,
+
+  /**
    * Changes the order of the columns on mobile
    */
   mobileFlip: PropTypes.bool,
@@ -52,6 +69,11 @@ TwoColumn.propTypes = {
    * Will drive the widths of the columns in desktop
    */
   columnConfig: PropTypes.arrayOf(PropTypes.shape(Column.propTypes)),
+
+  /**
+   * The breakpoint at which the layout will go from stacked to two columns
+   */
+  breakpoint: PropTypes.string,
 };
 
 /**

@@ -1,3 +1,7 @@
+1.14.2 / 2017-11-28
+==================
+- Fix bug in BackgroundImage
+
 1.14.0 / 2017-11-28
 ==================
 - Resolve TemplateBuilder components via resolver func rather than static

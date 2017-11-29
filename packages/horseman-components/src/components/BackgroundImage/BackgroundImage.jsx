@@ -5,6 +5,7 @@ import { imageType } from "../../types";
 
 const BackgroundImage = styled.div`
   width: 100%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

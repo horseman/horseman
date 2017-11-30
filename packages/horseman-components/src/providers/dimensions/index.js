@@ -84,7 +84,7 @@ export default Component => {
 
       return (
         <div
-          styles={styles}
+          style={styles}
           ref={wrapper => {
             this.wrapper = wrapper;
           }}

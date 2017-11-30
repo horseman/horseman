@@ -36,17 +36,17 @@ export default Component => {
     }
 
     componentDidMount() {
-      erd.listenTo(this.component, this.handleResize);
+      erd.listenTo(this.wrapper, this.handleResize);
 
       this.handleResize();
     }
 
     componentWillUnmount() {
-      erd.removeListener(this.component, this.handleResize);
+      erd.removeListener(this.wrapper, this.handleResize);
     }
 
     handleResize() {
-      const { clientHeight: height, clientWidth: width } = this.component;
+      const { clientHeight: height, clientWidth: width } = this.wrapper;
 
       const oldWidth = this.state.width;
 
@@ -72,15 +72,29 @@ export default Component => {
     }
 
     render() {
+      const styles = this.props.fill
+        ? {
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
+          }
+        : {};
+
       return (
-        <Component
-          ref={component => {
-            this.component = component;
+        <div
+          styles={styles}
+          ref={wrapper => {
+            this.wrapper = wrapper;
           }}
-          {...this.props}
-          width={this.state.width}
-          height={this.state.height}
-        />
+        >
+          <Component
+            {...this.props}
+            width={this.state.width}
+            height={this.state.height}
+          />
+        </div>
       );
     }
   }
@@ -95,6 +109,11 @@ export default Component => {
      * Callback that will be fired when a resize is triggered.
      */
     onResize: PropTypes.func,
+
+    /**
+     * If we are "filling" our parent container, render the wrapper absolutely
+     */
+    fill: PropTypes.bool,
 
     boundaries: PropTypes.arrayOf(PropTypes.number),
   };

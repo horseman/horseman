@@ -42,7 +42,6 @@ const BackgroundImage = styled.div`
 
 BackgroundImage.defaultProps = {
   srcset: [],
-  fill: false,
 };
 
 BackgroundImage.propTypes = {

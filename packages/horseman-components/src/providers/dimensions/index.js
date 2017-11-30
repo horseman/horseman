@@ -28,7 +28,6 @@ export default Component => {
       super();
 
       this.state = {
-        loaded: false,
         width: 0,
         height: 0,
       };
@@ -39,9 +38,7 @@ export default Component => {
     componentDidMount() {
       erd.listenTo(this.component, this.handleResize);
 
-      if (!this.state.loaded) {
-        this.handleResize();
-      }
+      this.handleResize();
     }
 
     componentWillUnmount() {
@@ -49,7 +46,7 @@ export default Component => {
     }
 
     handleResize() {
-      const { clientHeight: height, clientWidth: width } = this.wrap;
+      const { clientHeight: height, clientWidth: width } = this.component;
 
       const oldWidth = this.state.width;
 
@@ -69,45 +66,21 @@ export default Component => {
       this.setState({
         width,
         height,
-        loaded: true,
       });
 
       this.props.onResize({ height, width });
     }
 
     render() {
-      const styles = {
-        wrap: {
-          position: "relative",
-          height: "100%",
-        },
-        component: {
-          height: "100%",
-        },
-      };
-
       return (
-        <div
-          ref={wrap => {
-            this.wrap = wrap;
+        <Component
+          ref={component => {
+            this.component = component;
           }}
-          style={{ ...styles.wrap }}
-        >
-          <div
-            ref={component => {
-              this.component = component;
-            }}
-            style={{ ...styles.component }}
-          >
-            {this.state.loaded ? (
-              <Component
-                {...this.props}
-                width={this.state.width}
-                height={this.state.height}
-              />
-            ) : null}
-          </div>
-        </div>
+          {...this.props}
+          width={this.state.width}
+          height={this.state.height}
+        />
       );
     }
   }

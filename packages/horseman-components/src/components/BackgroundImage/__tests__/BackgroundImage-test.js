@@ -27,6 +27,15 @@ describe("BackgroundImage", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test("renders correctly filled", () => {
+    const wrapper = shallow(
+      <BackgroundImage {...image} fill>
+        foo
+      </BackgroundImage>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test("renders correctly without a srcset passed in", () => {
     const wrapper = shallow(
       <BackgroundImage src="default" width={10}>

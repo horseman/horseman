@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { imageType } from "../../types";
 
@@ -9,6 +9,14 @@ const BackgroundImage = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  ${({ fill }) =>
+    fill &&
+    css`
+      position: absolute;
+      top: 0;
+      left: 0;
+    `};
 
   background-image: url(${({ src, srcset, width }) => {
     let url = "";
@@ -34,10 +42,16 @@ const BackgroundImage = styled.div`
 
 BackgroundImage.defaultProps = {
   srcset: [],
+  fill: false,
 };
 
 BackgroundImage.propTypes = {
   ...imageType,
+
+  /**
+   * Will absolutely position the image within it's container
+   */
+  fill: PropTypes.bool,
 
   /**
    * Will display the background image within srcset that is optimized for the

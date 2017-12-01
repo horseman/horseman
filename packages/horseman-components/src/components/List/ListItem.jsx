@@ -21,22 +21,29 @@ const ListItem = styled.div`
     margin-top: 0;
   }
 
-  ${media.mdAndUp(css`
-    width: calc(${({ base, gutter }) => `${100 / base}% - ${gutter / 2}px`});
-    &:nth-child(-n + ${({ base }) => base}) {
-      margin-top: 0em;
-    }
-  `)};
+  ${({ breakpoint }) =>
+    media[breakpoint](css`
+      width: calc(${({ base, gutter }) => `${100 / base}% - ${gutter / 2}px`});
+      &:nth-child(-n + ${({ base }) => base}) {
+        margin-top: 0em;
+      }
+    `)};
 `;
 
 ListItem.defaultProps = {
   gutter: 30,
   mobileBase: 1,
+  breakpoint: "mdAndUp",
 };
 
 ListItem.propTypes = {
   base: PropTypes.number.isRequired,
   mobileBase: PropTypes.number,
+
+  /**
+   * The breakpoint at which the layout will go desktop to mobile
+   */
+  breakpoint: PropTypes.string,
 };
 
 export default ListItem;

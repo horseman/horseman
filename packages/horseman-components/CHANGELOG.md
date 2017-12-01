@@ -1,3 +1,7 @@
+1.14.8 / 2017-11-28
+==================
+- Custom breakpoints in List
+
 1.14.2 / 2017-11-28
 ==================
 - Fix bug in BackgroundImage

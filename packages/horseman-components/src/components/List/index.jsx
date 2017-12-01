@@ -13,7 +13,7 @@ const StyledList = styled.div`
   align-items: bottom;
 `;
 
-const List = ({ children, base, mobileBase }) => {
+const List = ({ children, base, mobileBase, breakpoint }) => {
   const numItems = children.length;
 
   // The list basis is the number of items that will live on a single line in
@@ -31,7 +31,12 @@ const List = ({ children, base, mobileBase }) => {
 
   /* eslint-disable react/no-array-index-key */
   const items = children.map((child, i) => (
-    <ListItem key={i} mobileBase={mobileBase} base={nonTrailingBase}>
+    <ListItem
+      key={i}
+      mobileBase={mobileBase}
+      base={nonTrailingBase}
+      breakpoint={breakpoint}
+    >
       {child}
     </ListItem>
   ));
@@ -70,6 +75,11 @@ List.propTypes = {
    * This is the number of items that will be displayed across on mobile
    */
   mobileBase: PropTypes.oneOf([1, 2, 3]).isRequired,
+
+  /**
+   * The breakpoint at which the layout will go desktop to mobile
+   */
+  breakpoint: PropTypes.string,
 };
 
 /**

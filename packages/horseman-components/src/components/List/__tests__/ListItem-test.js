@@ -13,4 +13,11 @@ describe("ListItem", () => {
     const wrapper = shallow(<ListItem base={2} mobileBase={2} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  test("renders correctly with custom breakpoint", () => {
+    const wrapper = shallow(
+      <ListItem base={2} mobileBase={2} breakpoint="smAndUp" />,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });

@@ -14,6 +14,16 @@ describe("List", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test("renders with custom breakpoint", () => {
+    const wrapper = shallow(
+      <List base={2} breakpoint="smAndUp">
+        <div />
+        <div />
+      </List>,
+    ).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test("modifies the basis to prevent trailing items.", () => {
     const wrapper = shallow(
       <List base={3}>

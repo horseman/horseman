@@ -1,3 +1,7 @@
+1.15.8 / 2017-11-28
+==================
+- Allow a non-rebased list
+
 1.14.8 / 2017-11-28
 ==================
 - Custom breakpoints in List

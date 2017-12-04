@@ -247,3 +247,84 @@ exports[`List renders with custom breakpoint 1`] = `
   </styled.div>
 </div>
 `;
+
+exports[`List will not modify the base if desired 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: bottom;
+  -webkit-box-align: bottom;
+  -ms-flex-align: bottom;
+  align-items: bottom;
+}
+
+<div
+  className="c0"
+>
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="1"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="2"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="3"
+    mobileBase={1}
+  >
+    <div />
+  </styled.div>
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="0"
+    mobileBase={1}
+  />
+  <styled.div
+    base={3}
+    breakpoint="mdAndUp"
+    gutter={30}
+    key="1"
+    mobileBase={1}
+  />
+</div>
+`;

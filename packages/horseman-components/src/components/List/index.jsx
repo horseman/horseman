@@ -13,7 +13,7 @@ const StyledList = styled.div`
   align-items: bottom;
 `;
 
-const List = ({ children, base, mobileBase, breakpoint }) => {
+const List = ({ children, base, mobileBase, breakpoint, rebase }) => {
   const numItems = children.length;
 
   // The list basis is the number of items that will live on a single line in
@@ -22,19 +22,22 @@ const List = ({ children, base, mobileBase, breakpoint }) => {
   const listBasis = base > numItems ? numItems : base;
 
   // If the base we are given forces the list to have a trailing single item
-  // we need to reduce the base in order to never leave a trailing item.
+  // we need to rebase in order to never leave a trailing item.
   const nonTrailingBase =
     numItems % listBasis === 1 ? listBasis - 1 : listBasis;
 
-  const trailingItems = numItems % nonTrailingBase;
-  const emptySlots = trailingItems ? nonTrailingBase - trailingItems : 0;
+  // determine if rebase is desired, use appropriate base.
+  const activeBase = rebase ? nonTrailingBase : listBasis;
+
+  const trailingItems = numItems % activeBase;
+  const emptySlots = trailingItems ? activeBase - trailingItems : 0;
 
   /* eslint-disable react/no-array-index-key */
   const items = children.map((child, i) => (
     <ListItem
       key={i}
       mobileBase={mobileBase}
-      base={nonTrailingBase}
+      base={activeBase}
       breakpoint={breakpoint}
     >
       {child}
@@ -44,7 +47,7 @@ const List = ({ children, base, mobileBase, breakpoint }) => {
   const placeholders = Array(emptySlots)
     .fill()
     .map((_, i) => (
-      <ListItem key={i} mobileBase={mobileBase} base={nonTrailingBase} />
+      <ListItem key={i} mobileBase={mobileBase} base={activeBase} />
     ));
   /* eslint-enable react/no-array-index-key */
 
@@ -58,6 +61,7 @@ const List = ({ children, base, mobileBase, breakpoint }) => {
 
 List.defaultProps = {
   mobileBase: 1,
+  rebase: true,
 };
 
 List.propTypes = {
@@ -80,6 +84,13 @@ List.propTypes = {
    * The breakpoint at which the layout will go desktop to mobile
    */
   breakpoint: PropTypes.string,
+
+  /**
+   * Will re-base the list to never allow a single item on a line. If set to
+   * false will use `base` as it is passed in, otherwise will alter the active
+   * base depending on the amount of ListItems present
+   */
+  rebase: PropTypes.bool,
 };
 
 /**

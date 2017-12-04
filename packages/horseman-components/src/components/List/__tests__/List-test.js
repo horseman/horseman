@@ -36,6 +36,18 @@ describe("List", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test("will not modify the base if desired", () => {
+    const wrapper = shallow(
+      <List base={3} rebase={false}>
+        <div />
+        <div />
+        <div />
+        <div />
+      </List>,
+    ).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test("Create the correct number of trailing empty children to force display", () => {
     const wrapper = shallow(
       <List base={3}>

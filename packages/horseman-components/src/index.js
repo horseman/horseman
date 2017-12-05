@@ -1,3 +1,4 @@
+import Accordions from "./components/Accordions";
 import BackgroundVideo from "./components/BackgroundVideo";
 import Carousel from "./components/Carousel";
 import Container from "./components/Container";
@@ -18,6 +19,7 @@ import * as actions from "./actions";
 import * as reducers from "./reducers";
 
 export {
+  Accordions,
   BackgroundVideo,
   Carousel,
   Container,

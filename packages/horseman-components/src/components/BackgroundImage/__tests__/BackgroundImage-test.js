@@ -23,7 +23,9 @@ describe("BackgroundImage", () => {
   };
 
   test("renders correctly", () => {
-    const wrapper = shallow(<BackgroundImage {...image}>foo</BackgroundImage>);
+    const wrapper = shallow(
+      <BackgroundImage {...image}>foo</BackgroundImage>,
+    ).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -32,7 +34,7 @@ describe("BackgroundImage", () => {
       <BackgroundImage {...image} fill>
         foo
       </BackgroundImage>,
-    );
+    ).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -41,7 +43,7 @@ describe("BackgroundImage", () => {
       <BackgroundImage src="default" width={10}>
         foo
       </BackgroundImage>,
-    );
+    ).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -52,7 +54,7 @@ describe("BackgroundImage", () => {
           <BackgroundImage {...image} width={srcset.width - 1}>
             foo
           </BackgroundImage>,
-        );
+        ).dive();
         expect(wrapper).toMatchSnapshot();
       });
     });
@@ -61,7 +63,7 @@ describe("BackgroundImage", () => {
         <BackgroundImage {...image} width={500}>
           foo
         </BackgroundImage>,
-      );
+      ).dive();
       expect(wrapper).toMatchSnapshot();
     });
   });

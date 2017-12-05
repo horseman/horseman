@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveBackgroundImage renders correctly 1`] = `
+<Dimensions
+  boundaries={
+    Array [
+      100,
+      200,
+      300,
+    ]
+  }
+  onResize={[Function]}
+  src="default"
+  srcset={
+    Array [
+      Object {
+        "src": "default",
+        "width": 100,
+      },
+      Object {
+        "src": "foo",
+        "width": 200,
+      },
+      Object {
+        "src": "bar",
+        "width": 300,
+      },
+    ]
+  }
+/>
+`;

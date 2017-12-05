@@ -12,8 +12,6 @@ exports[`BackgroundImage renders correct src with different srcsets test default
 
 <div
   className="c0"
-  src="default"
-  width={99}
 >
   foo
 </div>
@@ -31,8 +29,6 @@ exports[`BackgroundImage renders correct src with different srcsets test larger 
 
 <div
   className="c0"
-  src="default"
-  width={199}
 >
   foo
 </div>
@@ -50,8 +46,6 @@ exports[`BackgroundImage renders correct src with different srcsets test largest
 
 <div
   className="c0"
-  src="default"
-  width={299}
 >
   foo
 </div>
@@ -69,8 +63,6 @@ exports[`BackgroundImage renders correct src with different srcsets uses the lar
 
 <div
   className="c0"
-  src="default"
-  width={500}
 >
   foo
 </div>
@@ -88,7 +80,6 @@ exports[`BackgroundImage renders correctly 1`] = `
 
 <div
   className="c0"
-  src="default"
 >
   foo
 </div>
@@ -109,8 +100,6 @@ exports[`BackgroundImage renders correctly filled 1`] = `
 
 <div
   className="c0"
-  fill={true}
-  src="default"
 >
   foo
 </div>
@@ -128,8 +117,6 @@ exports[`BackgroundImage renders correctly without a srcset passed in 1`] = `
 
 <div
   className="c0"
-  src="default"
-  width={10}
 >
   foo
 </div>

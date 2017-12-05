@@ -1,44 +1,48 @@
+import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
 import { imageType } from "../../types";
 
-const BackgroundImage = styled.div`
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+const BackgroundImage = ({ fill, width, height, src, srcset, ...rest }) => {
+  const Component = styled.div`
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
-  ${({ fill }) =>
-    fill &&
-    css`
-      position: absolute;
-      top: 0;
-      left: 0;
-    `};
+    ${fill &&
+      css`
+        position: absolute;
+        top: 0;
+        left: 0;
+      `};
 
-  background-image: url(${({ src, srcset, width }) => {
-    let url = "";
-    if (!width || srcset.length === 0) {
-      url = src;
-    } else {
-      // Sort the srcset by width from smallest to largest
-      const sortedSrcset = srcset.slice().sort((a, b) => a.width > b.width);
+    background-image: url(${() => {
+      let url = "";
+      if (!width || srcset.length === 0) {
+        url = src;
+      } else {
+        // Sort the srcset by width from smallest to largest
+        const sortedSrcset = srcset.slice().sort((a, b) => a.width > b.width);
 
-      // Find the smallest based on on the width
-      const filteredSource = sortedSrcset.filter(set => set.width > width);
+        // Find the smallest based on on the width
+        const filteredSource = sortedSrcset.filter(set => set.width > width);
 
-      // Get the best optimized version of the image to use based on width.
-      url =
-        filteredSource.length > 0
-          ? filteredSource[0].src
-          : sortedSrcset.pop().src;
-    }
+        // Get the best optimized version of the image to use based on width.
+        url =
+          filteredSource.length > 0
+            ? filteredSource[0].src
+            : sortedSrcset.pop().src;
+      }
 
-    return url;
-  }});
-`;
+      return url;
+    }});
+  `;
+
+  return <Component {...rest} />;
+};
 
 BackgroundImage.defaultProps = {
   srcset: [],

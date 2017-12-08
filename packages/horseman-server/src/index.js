@@ -13,7 +13,8 @@ const runServer = ({ render, publicPath }) => {
   app.get("*", (req, res) =>
     render(req.path).then(response => {
 
-      if(response.statusCode === "301" || response.statusCode === "302"){
+      if(response.statusCode === 301
+        || response.statusCode === 302){
         return res.redirect(response.statusCode, response.url);
       }
 

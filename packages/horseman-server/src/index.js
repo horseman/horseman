@@ -11,11 +11,16 @@ const runServer = ({ render, publicPath }) => {
   app.set('view engine', 'ejs')
 
   app.get("*", (req, res) =>
-    render(req.path).then(response =>
-      res
+    render(req.path).then(response => {
+
+      if(response.statusCode === "301" || response.statusCode === "302"){
+        return res.redirect(response.statusCode, response.url);
+      }
+
+      return res
         .status(response.statusCode || 200)
-        .render("index",response.data),
-    ),
+        .render("index",response.data);
+    })
   );
 
   const server = app.listen(80, () => {

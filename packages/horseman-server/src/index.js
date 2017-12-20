@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 import express from "express";
+
 import path from "path";
 import compression from "compression";
+
+import removeSlash from "./removeSlash";
 
 const runServer = ({ render, publicPath }) => {
   const app = express();
@@ -9,8 +12,10 @@ const runServer = ({ render, publicPath }) => {
   app.use(compression());
   app.use(express.static(publicPath));
   app.set('view engine', 'ejs')
+  app.use(removeSlash);
 
-  app.get("*", (req, res) =>
+
+  app.get("*", (req, res) => (
     render(req.path).then(response => {
 
       if(response.statusCode === 301
@@ -22,7 +27,7 @@ const runServer = ({ render, publicPath }) => {
         .status(response.statusCode || 200)
         .render("index",response.data);
     })
-  );
+  ));
 
   const server = app.listen(80, () => {
     const { address, port } = server.address();

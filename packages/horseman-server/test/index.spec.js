@@ -25,8 +25,14 @@ const render = path => new Promise((resolve) => {
 });
 
 describe('loading express', () => {
+  let server;
   const port = 3000;
-  const server = startServer({ render, port });
+  beforeEach(() => {
+    server = startServer({ render, port });
+  });
+  afterEach((done) => {
+    server.close(done);
+  });
   it('responds to /', (done) => {
     request(server)
       .get('/')
@@ -42,6 +48,24 @@ describe('loading express', () => {
     request(server)
       .get('/old')
       .expect('location', '/new')
+      .expect(301, done);
+  });
+  it('redirects to remove uppercase letters', (done) => {
+    request(server)
+      .get('/Old')
+      .expect('location', '/old')
+      .expect(301, done);
+  });
+  it('keeps query strings when redirecting with slash', (done) => {
+    request(server)
+      .get('/slash/?foo=bar')
+      .expect('location', '/slash?foo=bar')
+      .expect(301, done);
+  });
+  it('keeps query strings when redirecting', (done) => {
+    request(server)
+      .get('/old?foo=bar')
+      .expect('location', '/new?foo=bar')
       .expect(301, done);
   });
   it('302 temp redirects', (done) => {

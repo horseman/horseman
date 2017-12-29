@@ -2,7 +2,9 @@ import compression from 'compression';
 import express from 'express';
 import path from 'path';
 
+import redirect from './helpers/redirect';
 import removeSlash from './middleware/removeSlash';
+import lowercase from './middleware/lowercase';
 
 const startServer = ({
     render,
@@ -19,12 +21,13 @@ const startServer = ({
   app.set('views', viewPath);
 
   app.use(removeSlash);
+  app.use(lowercase);
 
   app.get('*', (req, res) => (
     render(req.path).then((response) => {
       if (response.statusCode === 301
         || response.statusCode === 302) {
-        return res.redirect(response.statusCode, response.url);
+        return redirect(res, req, response.statusCode, response.url);
       }
 
       return res
@@ -34,9 +37,10 @@ const startServer = ({
   ));
 
   const server = app.listen(port, () => {
-    const { address, port } = server.address();
-    /* eslint-disable-next-line no-console */
-    console.log(`Listening at http://${address}:${port}`);
+    const { address, port: listeningPort } = server.address();
+    /* eslint-disable no-console */
+    console.log(`Listening at http://${address}:${listeningPort}`);
+    /* eslint-enable */
   });
   return server;
 };

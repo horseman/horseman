@@ -19,7 +19,7 @@
     "express": "^4.16.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
@@ -28,15 +28,10 @@
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "chai": "^3.5.0",
-    "chai-enzyme": "^0.6.1",
-    "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0",
-    "expect-enzyme": "^0.15.0",
     "mocha": "^3.3.0",
-    "mocha-webpack": "^0.7.0",
     "mock-fetch-api": "^1.0.7",
-    "supertest": "^3.0.0",
-    "webpack": "^2.5.1"
+    "supertest": "^3.0.0"
   }
 }

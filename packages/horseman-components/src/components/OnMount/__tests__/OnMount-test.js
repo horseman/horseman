@@ -8,6 +8,7 @@ const TestComponent = () => <div />;
 describe("OnMount", () => {
   test("Fires Component Did Mount only", () => {
     const spy = jest.spyOn(OnMount.prototype, "componentDidMount");
+    const gtmSpy = jest.spyOn(OnMount.prototype, "fireGtmEvent");
     const wrapper = shallow(
       <OnMount>
         <TestComponent />
@@ -15,6 +16,7 @@ describe("OnMount", () => {
     );
     expect(wrapper).toMatchSnapshot();
     expect(spy).toHaveBeenCalled();
+    expect(gtmSpy).toHaveBeenCalledTimes(0);
   });
 
   test("Fires fireGtmEvent", () => {
@@ -22,8 +24,7 @@ describe("OnMount", () => {
       push: obj => obj,
     };
     const windowSpy = jest.spyOn(window.dataLayer, "push");
-
-    const spy = jest.spyOn(OnMount.prototype, "fireGtmEvent");
+    const gtmSpy = jest.spyOn(OnMount.prototype, "fireGtmEvent");
     const wrapper = shallow(
       <OnMount gtmEvent="loaded">
         <TestComponent />
@@ -31,7 +32,7 @@ describe("OnMount", () => {
     );
     expect(wrapper).toMatchSnapshot();
     const event = "loaded";
-    expect(spy).toHaveBeenCalled();
+    expect(gtmSpy).toHaveBeenCalled();
     expect(windowSpy).toHaveBeenCalledWith({ event });
   });
 });

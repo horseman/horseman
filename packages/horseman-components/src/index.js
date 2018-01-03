@@ -6,6 +6,7 @@ import dimensions from "./providers/dimensions";
 import List from "./components/List";
 import Modal from "./components/Modal";
 import NavList from "./components/NavList";
+import OnMount from "./components/OnMount";
 import Picture from "./components/Picture";
 import ResponsiveBackgroundImage from "./components/ResponsiveBackgroundImage";
 import RichText from "./components/RichText";
@@ -26,6 +27,7 @@ export {
   List,
   Modal,
   NavList,
+  OnMount,
   Picture,
   ResponsiveBackgroundImage,
   RichText,

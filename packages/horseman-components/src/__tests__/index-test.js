@@ -8,6 +8,7 @@ const components = [
   "List",
   "Modal",
   "NavList",
+  "EventOnMount",
   "Picture",
   "ResponsiveBackgroundImage",
   "RichText",

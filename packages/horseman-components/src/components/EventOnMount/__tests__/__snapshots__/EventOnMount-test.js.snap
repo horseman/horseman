@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OnMount Fires Component Did Mount only 1`] = `
+exports[`EventOnMount Fires Component Did Mount only 1`] = `
 <div>
   <TestComponent />
 </div>
 `;
 
-exports[`OnMount Fires fireGtmEvent 1`] = `
+exports[`EventOnMount Fires fireGtmEvent 1`] = `
 <div>
   <TestComponent />
 </div>

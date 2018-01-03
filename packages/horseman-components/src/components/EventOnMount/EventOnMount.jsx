@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class OnMount extends React.Component {
+class EventOnMount extends React.Component {
   componentDidMount() {
     const { gtmEvent } = this.props;
 
@@ -25,9 +25,9 @@ class OnMount extends React.Component {
   }
 }
 
-OnMount.propTypes = {
+EventOnMount.propTypes = {
   gtmEvent: PropTypes.string,
   children: PropTypes.node,
 };
 
-export default OnMount;
+export default EventOnMount;

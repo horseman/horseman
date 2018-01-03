@@ -1,18 +1,18 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import OnMount from "../";
+import EventOnMount from "../";
 
 const TestComponent = () => <div />;
 
-describe("OnMount", () => {
+describe("EventOnMount", () => {
   test("Fires Component Did Mount only", () => {
-    const spy = jest.spyOn(OnMount.prototype, "componentDidMount");
-    const gtmSpy = jest.spyOn(OnMount.prototype, "fireGtmEvent");
+    const spy = jest.spyOn(EventOnMount.prototype, "componentDidMount");
+    const gtmSpy = jest.spyOn(EventOnMount.prototype, "fireGtmEvent");
     const wrapper = shallow(
-      <OnMount>
+      <EventOnMount>
         <TestComponent />
-      </OnMount>,
+      </EventOnMount>,
     );
     expect(wrapper).toMatchSnapshot();
     expect(spy).toHaveBeenCalled();
@@ -24,11 +24,11 @@ describe("OnMount", () => {
       push: obj => obj,
     };
     const windowSpy = jest.spyOn(window.dataLayer, "push");
-    const gtmSpy = jest.spyOn(OnMount.prototype, "fireGtmEvent");
+    const gtmSpy = jest.spyOn(EventOnMount.prototype, "fireGtmEvent");
     const wrapper = shallow(
-      <OnMount gtmEvent="loaded">
+      <EventOnMount gtmEvent="loaded">
         <TestComponent />
-      </OnMount>,
+      </EventOnMount>,
     );
     expect(wrapper).toMatchSnapshot();
     const event = "loaded";

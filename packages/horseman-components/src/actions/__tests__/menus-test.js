@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved, import/extensions */
 import * as HC from "horseman-core";
 
 import * as menusActions from "../menus";

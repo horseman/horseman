@@ -5,7 +5,7 @@ export default function menus(state = initialState, action) {
     case "@@horseman/addRemoteMenu": {
       return {
         ...state,
-        [action.response.slug]: action.response.menuItems,
+        [action.payload.slug]: action.payload.menuItems,
       };
     }
 

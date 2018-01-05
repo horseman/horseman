@@ -1,3 +1,8 @@
+1.17.0 / 2018-1-5
+==================
+- Adds new menu action to fetch menu's from a remote source.
+- Add new peer-dep on horseman-core ^2.3.0
+
 1.15.8 / 2017-11-28
 ==================
 - Allow a non-rebased list

@@ -2,6 +2,13 @@ const initialState = {};
 
 export default function menus(state = initialState, action) {
   switch (action.type) {
+    case "@@horseman/addRemoteMenu": {
+      return {
+        ...state,
+        [action.response.slug]: action.response.menuItems,
+      };
+    }
+
     case "@@horseman/addMenu": {
       return {
         ...state,

@@ -83,4 +83,31 @@ describe("menus reducer", () => {
       alternate: newMenu,
     });
   });
+
+  test("addRemoteMenu", () => {
+    const newMenu = [
+      {
+        to: "#",
+        text: "Bar",
+        subnav: [
+          {
+            to: "biz",
+            text: "baz",
+          },
+        ],
+      },
+    ];
+    expect(
+      menus(state, {
+        type: "@@horseman/addRemoteMenu",
+        response: {
+          slug: "alternate",
+          menuItems: newMenu,
+        },
+      }),
+    ).toEqual({
+      ...state,
+      alternate: newMenu,
+    });
+  });
 });

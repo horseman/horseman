@@ -1,3 +1,8 @@
+/* eslint-disable import/no-unresolved, import/extensions */
+import { ActionFactory } from "horseman-core";
+
+export const fetchMenu = uri => ActionFactory("@@horseman/addRemoteMenu")(uri);
+
 export const addMenu = ({ menuName, menu }) => ({
   menuName,
   menu,

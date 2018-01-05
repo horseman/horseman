@@ -40,13 +40,14 @@ async function buildCjs({ input, file }) {
   const bundle = await rollup.rollup({
     input,
     external: [
-      "react",
-      "styled-components",
-      "prop-types",
-      "react-responsive-carousel",
       "element-resize-detector",
+      "horseman-core",
+      "prop-types",
+      "react",
       "react-modal",
       "react-onclickoutside",
+      "react-responsive-carousel",
+      "styled-components",
     ],
     plugins: [
       babel({

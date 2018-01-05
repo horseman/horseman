@@ -24,6 +24,7 @@
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
+    "horseman-core": "^2.3.0",
     "react": "^16.0.0",
     "styled-components": "^2.2.1"
   },

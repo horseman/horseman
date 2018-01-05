@@ -1,4 +1,13 @@
+/* eslint-disable import/no-unresolved, import/extensions */
+import * as HC from "horseman-core";
+
 import * as menusActions from "../menus";
+
+const inner = jest.fn();
+
+const ActionFactory = jest.fn(() => inner);
+
+HC.ActionFactory = ActionFactory;
 
 describe("menus", () => {
   test("toggleMenuItem", () => {
@@ -32,5 +41,12 @@ describe("menus", () => {
       menuName: "foo",
       menu: [{ to: "#", text: "foo" }],
     });
+  });
+
+  test("fetchMenu", () => {
+    menusActions.fetchMenu("foo");
+
+    expect(ActionFactory.mock.calls[0][0]).toEqual("@@horseman/addRemoteMenu");
+    expect(inner.mock.calls[0][0]).toEqual("foo");
   });
 });

@@ -100,7 +100,7 @@ describe("menus reducer", () => {
     expect(
       menus(state, {
         type: "@@horseman/addRemoteMenu",
-        response: {
+        payload: {
           slug: "alternate",
           menuItems: newMenu,
         },

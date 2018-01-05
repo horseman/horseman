@@ -2,6 +2,19 @@ const initialState = {};
 
 export default function menus(state = initialState, action) {
   switch (action.type) {
+    case "@@horseman/addRemoteMenuSet": {
+      const newMenus = Object.assign(
+        {},
+        ...action.payload.data.map(menu => ({
+          [menu.slug]: menu.menuItems,
+        })),
+      );
+
+      return {
+        ...state,
+        ...newMenus,
+      };
+    }
     case "@@horseman/addRemoteMenu": {
       return {
         ...state,

@@ -49,4 +49,13 @@ describe("menus", () => {
     expect(ActionFactory.mock.calls[0][0]).toEqual("@@horseman/addRemoteMenu");
     expect(inner.mock.calls[0][0]).toEqual("foo");
   });
+
+  test("fetchMenuSet", () => {
+    menusActions.fetchMenuSet("foo");
+
+    expect(ActionFactory.mock.calls[1][0]).toEqual(
+      "@@horseman/addRemoteMenuSet",
+    );
+    expect(inner.mock.calls[1][0]).toEqual("foo");
+  });
 });

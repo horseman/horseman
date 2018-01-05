@@ -110,4 +110,45 @@ describe("menus reducer", () => {
       alternate: newMenu,
     });
   });
+
+  test("addRemoteMenuSet", () => {
+    const payload = {
+      data: [
+        {
+          slug: "one",
+          menuItems: [
+            {
+              to: "#",
+              text: "Bar",
+              subnav: [
+                {
+                  to: "biz",
+                  text: "baz",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          slug: "two",
+          menuItems: [
+            {
+              to: "#bang",
+              text: "Bang",
+            },
+          ],
+        },
+      ],
+    };
+    expect(
+      menus(state, {
+        payload,
+        type: "@@horseman/addRemoteMenuSet",
+      }),
+    ).toEqual({
+      ...state,
+      one: payload.data[0].menuItems,
+      two: payload.data[1].menuItems,
+    });
+  });
 });

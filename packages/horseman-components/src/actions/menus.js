@@ -3,6 +3,9 @@ import { ActionFactory } from "horseman-core";
 
 export const fetchMenu = uri => ActionFactory("@@horseman/addRemoteMenu")(uri);
 
+export const fetchMenuSet = uri =>
+  ActionFactory("@@horseman/addRemoteMenuSet")(uri);
+
 export const addMenu = ({ menuName, menu }) => ({
   menuName,
   menu,

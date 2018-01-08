@@ -1,0 +1,12 @@
+{
+  "presets": [["es2015", {"modules": false}], "stage-2", "react"],
+  "plugins": ["transform-runtime"],
+  "env": {
+    "cjs": {
+      "presets": ["es2015", "stage-2", "react"],
+    },
+    "test": {
+      "presets":["es2015", "stage-2", "react"],
+    }
+  }
+}

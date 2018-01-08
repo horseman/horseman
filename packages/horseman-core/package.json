@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "fetch-everywhere": "^1.0.5",
-    "fetch-mock": "^5.13.1"
+    "node-fetch": "^2.0.0-alpha.9"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
@@ -37,13 +37,14 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
     "enzyme-to-json": "^3.1.4",
+    "fetch-mock": "^6.0.0-beta.7",
     "jest": "^21.2.1",
     "mock-fetch-api": "^1.0.7",
     "prop-types": "^15.5.8",
     "react": "^16.0.0",
-    "react-router-dom": "^4.1.1",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.1.1",
     "react-test-renderer": "^16.0.0",
     "redux": "^3.7.0",
     "redux-mock-store": "^1.2.3",

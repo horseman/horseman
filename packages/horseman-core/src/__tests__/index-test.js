@@ -1,6 +1,7 @@
 import * as horseman from "../";
 
 import paginator from "../providers/paginator";
+import Horseman from "../Horseman";
 import prefetch from "../providers/prefetch";
 import { ConnectedResourceProvider } from "../providers/ResourceProvider";
 import { ConnectedPaginationProvider } from "../providers/PaginationProvider";
@@ -39,8 +40,11 @@ describe("horseman.js index", () => {
     test("the paginator provider", () => {
       expect(horseman.paginator).toEqual(paginator);
     });
+    test("the default horseman object", () => {
+      expect(horseman.default).toEqual(Horseman);
+    });
     test("the Correct Number of items", () => {
-      expect(Object.keys(horseman)).toHaveLength(6);
+      expect(Object.keys(horseman)).toHaveLength(7);
     });
   });
 });

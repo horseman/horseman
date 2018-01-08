@@ -1,4 +1,5 @@
 import "fetch-everywhere";
+import Horseman from "./Horseman";
 import * as types from "./constants/ActionTypes";
 
 /**
@@ -16,6 +17,7 @@ export default successAction => endpoint => (dispatch, getState) => {
     return null;
   }
 
+  Horseman.addResource({ endpoint, action: successAction });
   dispatch({ type: types.RESOURCE_REQUEST, meta: { endpoint } });
 
   return fetch(new Request(endpoint, { redirect: "manual" }), {

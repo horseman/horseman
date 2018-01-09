@@ -8,21 +8,33 @@ describe("Horseman singleton", () => {
   describe("adding & getting resources", () => {
     test("adding", () => {
       const newResource = {
-        successAction: "foo",
+        action: "foo",
         endpoint: "bar",
       };
 
       Horseman.addResource(newResource);
 
-      expect(Horseman.getAllResources().has(newResource)).toEqual(true);
+      expect(Horseman.getAllResources().has(newResource.endpoint)).toEqual(
+        true,
+      );
     });
     test("getting", () => {
       const newResource = {
-        successAction: "biz",
+        action: "biz",
         endpoint: "baz",
       };
       Horseman.addResource(newResource);
       expect(Horseman.getAllResources().size).toEqual(2);
+    });
+
+    test("hasCheck", () => {
+      const resource = {
+        action: "biz",
+        endpoint: "baz",
+      };
+      Horseman.addResource(resource);
+      expect(Horseman.hasResource("baz")).toEqual(true);
+      expect(Horseman.hasResource("foo")).toEqual(false);
     });
   });
 });

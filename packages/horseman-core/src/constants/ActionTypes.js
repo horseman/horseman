@@ -8,3 +8,6 @@ export const SAVE_ROUTES = "@@horseman/SAVE_ROUTES";
 
 export const SET_PAGE_TOTAL = "@@horseman/SET_PAGE_TOTAL";
 export const SET_CURRENT_PAGE = "@@horseman/SET_CURRENT_PAGE";
+
+export const PAGE_LOADING = "@@horseman/PAGE_LOADING";
+export const PAGE_LOADED = "@@horseman/PAGE_LOADED";

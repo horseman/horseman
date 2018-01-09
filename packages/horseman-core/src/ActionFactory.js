@@ -9,12 +9,18 @@ import * as types from "./constants/ActionTypes";
  * @param successAction {string} The action to dispatch if a resource comes
  * back successfully.
  *
- * @return {function} Callback accepting an endpoint and dispatching the
+ * @param bypass {func} Function that will be fired when checking if we should
+ * bypass the fetch.
+ *
+ * @return {Promise} Callback accepting an endpoint and dispatching the
  * actions
  */
-export default successAction => endpoint => (dispatch, getState) => {
-  if (typeof getState().horsemanResources[endpoint] !== "undefined") {
-    return null;
+export default (successAction, bypass = () => false) => endpoint => (
+  dispatch,
+  getState,
+) => {
+  if (bypass(getState())) {
+    return Promise.resolve("Bypass");
   }
 
   Horseman.addResource({ endpoint, action: successAction });

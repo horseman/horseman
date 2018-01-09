@@ -3,8 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import ParseEndpoint from "../ParseEndpoint";
-import * as types from "../constants/ActionTypes";
-import ActionFactory from "../ActionFactory";
+import addResource from "../actions/addResource";
 
 /**
  * Responsible for managing a component that will be rendered using data stored
@@ -110,7 +109,7 @@ export const mapStateToProps = (state, ownProps) => {
  * The component needs to be able to fetch the resource we want.
  */
 export const mapDispatchToProps = dispatch => ({
-  getResource: uri => dispatch(ActionFactory(types.ADD_RESOURCE)(uri)),
+  getResource: uri => dispatch(addResource(uri)),
 });
 
 export const ConnectedResourceProvider = connect(

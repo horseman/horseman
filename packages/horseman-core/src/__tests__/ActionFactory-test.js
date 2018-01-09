@@ -14,6 +14,20 @@ describe("ActionFactory", () => {
   fetchMock.mock("end:/bad", 404);
   fetchMock.mock("end:/badjson", "not json");
 
+  test("should bypass when the bypass function resolves true", done => {
+    const store = mockStore({ horsemanResources: {} });
+    const actions = [];
+    store
+      .dispatch(
+        ActionFactory("@@horseman/ADD_RESOURCE", () => true)("/endpoint"),
+      )
+      .then(p => {
+        expect(p).toEqual("Bypass");
+        expect(store.getActions()).toEqual(actions);
+        done();
+      });
+  });
+
   test("should return a valid resource action with success name", done => {
     const store = mockStore({ horsemanResources: {} });
     const actions = [

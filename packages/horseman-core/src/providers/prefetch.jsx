@@ -3,15 +3,15 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { connect } from "react-redux";
-import * as types from "../constants/ActionTypes";
-import ActionFactory from "../ActionFactory";
 import getRoutePreloadData from "../getRoutePreloadData";
+
+import addResource from "../actions/addResource";
 
 /**
  * The component needs to be able to fetch the resource we want.
  */
 export const mapDispatchToProps = dispatch => ({
-  preload: uri => dispatch(ActionFactory(types.ADD_RESOURCE)(uri)),
+  preload: uri => dispatch(addResource(uri)),
 });
 
 const mapStateToProps = state => ({

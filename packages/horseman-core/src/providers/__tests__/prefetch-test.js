@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from "react";
-import { expect } from "chai";
 import { Provider } from "react-redux";
 import { mount } from "enzyme";
 import configureMockStore from "redux-mock-store";
@@ -52,7 +51,8 @@ describe("prefetch provider", () => {
         endpoint: "matchedUrl",
       },
     };
-    expect(action).to.deep.equal(store.getActions()[0]);
+
+    expect(action).toEqual(store.getActions()[0]);
   });
 
   test("should not fire an action when there is no matched route", () => {
@@ -62,6 +62,6 @@ describe("prefetch provider", () => {
         <Link to="/baz">hi</Link>
       </Provider>,
     );
-    expect(store.getActions()).to.deep.equal([]);
+    expect(store.getActions()).toEqual([]);
   });
 });

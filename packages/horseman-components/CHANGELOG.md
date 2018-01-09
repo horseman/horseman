@@ -1,3 +1,7 @@
+1.18.0 / 2018-1-9
+==================
+- Don't fetch menu's if they have already been fetched
+
 1.17.0 / 2018-1-5
 ==================
 - Adds new menu action to fetch menu's from a remote source.

@@ -1,10 +1,15 @@
 /* eslint-disable import/no-unresolved, import/extensions */
-import { ActionFactory } from "horseman-core";
+import Horseman, { ActionFactory } from "horseman-core";
 
-export const fetchMenu = uri => ActionFactory("@@horseman/addRemoteMenu")(uri);
+export const fetchMenu = uri =>
+  ActionFactory("@@horseman/addRemoteMenu", () => Horseman.hasResource(uri))(
+    uri,
+  );
 
 export const fetchMenuSet = uri =>
-  ActionFactory("@@horseman/addRemoteMenuSet")(uri);
+  ActionFactory("@@horseman/addRemoteMenuSet", () => Horseman.hasResource(uri))(
+    uri,
+  );
 
 export const addMenu = ({ menuName, menu }) => ({
   menuName,

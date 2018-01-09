@@ -1,13 +1,6 @@
-/* eslint-disable import/no-unresolved, import/extensions */
-import * as HC from "horseman-core";
-
+/* eslint-disable import/no-unresolved, import/extensions, no-underscore-dangle */
+import Horseman, { ActionFactory } from "horseman-core";
 import * as menusActions from "../menus";
-
-const inner = jest.fn();
-
-const ActionFactory = jest.fn(() => inner);
-
-HC.ActionFactory = ActionFactory;
 
 describe("menus", () => {
   test("toggleMenuItem", () => {
@@ -43,19 +36,37 @@ describe("menus", () => {
     });
   });
 
-  test("fetchMenu", () => {
-    menusActions.fetchMenu("foo");
+  describe("fetching single menu", () => {
+    test("fetchMenu", () => {
+      menusActions.fetchMenu("foo");
 
-    expect(ActionFactory.mock.calls[0][0]).toEqual("@@horseman/addRemoteMenu");
-    expect(inner.mock.calls[0][0]).toEqual("foo");
+      expect(ActionFactory.mock.calls[0][0]).toEqual(
+        "@@horseman/addRemoteMenu",
+      );
+      expect(ActionFactory.__getInner().mock.calls[0][0]).toEqual("foo");
+
+      const bypassFunction = ActionFactory.mock.calls[0][1];
+      expect(bypassFunction()).toEqual(false);
+    });
+
+    test("bypass when existing", () => {
+      Horseman.addResource({
+        action: "#",
+        endpoint: "foo",
+      });
+
+      menusActions.fetchMenu("foo");
+      const bypassFunction = ActionFactory.mock.calls[1][1];
+      expect(bypassFunction()).toEqual(true);
+    });
   });
 
   test("fetchMenuSet", () => {
     menusActions.fetchMenuSet("foo");
 
-    expect(ActionFactory.mock.calls[1][0]).toEqual(
+    expect(ActionFactory.mock.calls[2][0]).toEqual(
       "@@horseman/addRemoteMenuSet",
     );
-    expect(inner.mock.calls[1][0]).toEqual("foo");
+    expect(ActionFactory.__getInner().mock.calls[2][0]).toEqual("foo");
   });
 });

@@ -3,36 +3,28 @@ import { shallow } from "enzyme";
 
 import EventOnMount from "../";
 
-const TestComponent = () => <div />;
+// eslint-disable-next-line
+const TestComponent = ({ title }) => <div>{title}</div>;
 
 describe("EventOnMount", () => {
-  test("Fires Component Did Mount only", () => {
-    const spy = jest.spyOn(EventOnMount.prototype, "componentDidMount");
-    const gtmSpy = jest.spyOn(EventOnMount.prototype, "fireGtmEvent");
-    const wrapper = shallow(
-      <EventOnMount>
-        <TestComponent />
-      </EventOnMount>,
-    );
-    expect(wrapper).toMatchSnapshot();
-    expect(spy).toHaveBeenCalled();
-    expect(gtmSpy).toHaveBeenCalledTimes(0);
-  });
-
-  test("Fires fireGtmEvent", () => {
-    window.dataLayer = {
-      push: obj => obj,
+  test("Fires onMount", () => {
+    const caller = {
+      onMount: obj => obj,
+      onUpdate: obj => obj,
     };
-    const windowSpy = jest.spyOn(window.dataLayer, "push");
-    const gtmSpy = jest.spyOn(EventOnMount.prototype, "fireGtmEvent");
+    const mountSpy = jest.spyOn(caller, "onMount");
+    const updateSpy = jest.spyOn(caller, "onUpdate");
     const wrapper = shallow(
-      <EventOnMount gtmEvent="loaded">
-        <TestComponent />
+      <EventOnMount onMount={caller.onMount} onUpdate={caller.onUpdate}>
+        <TestComponent title="foo" />
       </EventOnMount>,
     );
     expect(wrapper).toMatchSnapshot();
-    const event = "loaded";
-    expect(gtmSpy).toHaveBeenCalled();
-    expect(windowSpy).toHaveBeenCalledWith({ event });
+    expect(mountSpy).toHaveBeenCalledTimes(1);
+    expect(updateSpy).toHaveBeenCalledTimes(0);
+    const NewComponent = <TestComponent title="bar" />;
+    wrapper.setProps({ children: NewComponent });
+    expect(mountSpy).toHaveBeenCalledTimes(1);
+    expect(updateSpy).toHaveBeenCalledTimes(1);
   });
 });

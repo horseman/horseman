@@ -3,21 +3,15 @@ import PropTypes from "prop-types";
 
 class EventOnMount extends React.Component {
   componentDidMount() {
-    const { gtmEvent } = this.props;
+    const { onMount } = this.props;
 
-    if (gtmEvent) {
-      this.fireGtmEvent();
-    }
+    onMount();
   }
 
-  fireGtmEvent() {
-    const { gtmEvent } = this.props;
-    if (
-      typeof window !== "undefined" &&
-      typeof window.dataLayer !== "undefined"
-    ) {
-      window.dataLayer.push({ event: gtmEvent });
-    }
+  componentDidUpdate() {
+    const { onUpdate } = this.props;
+
+    onUpdate();
   }
 
   render() {
@@ -26,7 +20,8 @@ class EventOnMount extends React.Component {
 }
 
 EventOnMount.propTypes = {
-  gtmEvent: PropTypes.string,
+  onMount: PropTypes.func,
+  onUpdate: PropTypes.func,
   children: PropTypes.node,
 };
 

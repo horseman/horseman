@@ -7,6 +7,7 @@ import { ConnectedResourceProvider } from "../providers/ResourceProvider";
 import { ConnectedPaginationProvider } from "../providers/PaginationProvider";
 import horsemanReducer from "../reducers/horsemanReducer";
 import horsemanRouteReducer from "../reducers/horsemanRouteReducer";
+import fetchResource from "../fetchResource";
 import ActionFactory from "../ActionFactory";
 
 describe("horseman.js index", () => {
@@ -43,8 +44,11 @@ describe("horseman.js index", () => {
     test("the default horseman object", () => {
       expect(horseman.default).toEqual(Horseman);
     });
+    test("fetchResource", () => {
+      expect(horseman.fetchResource).toEqual(fetchResource);
+    });
     test("the Correct Number of items", () => {
-      expect(Object.keys(horseman)).toHaveLength(7);
+      expect(Object.keys(horseman)).toHaveLength(8);
     });
   });
 });

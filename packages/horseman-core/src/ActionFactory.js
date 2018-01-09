@@ -1,6 +1,6 @@
-import "fetch-everywhere";
 import Horseman from "./Horseman";
 import * as types from "./constants/ActionTypes";
+import fetchResource from "./fetchResource";
 
 /**
  * Fetch a singular endpoint from an api and dispatches actions depending on
@@ -26,48 +26,9 @@ export default (successAction, bypass = () => false) => endpoint => (
   Horseman.addResource({ endpoint, action: successAction });
   dispatch({ type: types.RESOURCE_REQUEST, meta: { endpoint } });
 
-  return fetch(new Request(endpoint, { redirect: "manual" }), {
-    credentials: "include",
-  }).then(response => {
-    if (response.status === 200) {
-      return response
-        .json()
-        .then(payload => {
-          // We don't want any errors thrown during the dispatch to be caught
-          // by our promise chain. So run the try/catch here.
-          try {
-            dispatch({
-              type: successAction,
-              meta: { endpoint, status: response.status },
-              payload,
-              response,
-            });
-          } catch (e) {
-            if (process.env.NODE_ENV !== "production") {
-              // eslint-disable-next-line no-console
-              console.warn(e);
-            }
-          }
-        })
-        .catch(() => dispatch({ type: types.BAD_JSON, meta: { endpoint } }));
-    }
-    return response
-      .json()
-      .then(payload =>
-        dispatch({
-          type: types.RESOURCE_FAIL,
-          meta: { endpoint, status: response.status },
-          payload,
-          response,
-        }),
-      )
-      .catch(() =>
-        dispatch({
-          type: types.RESOURCE_FAIL,
-          meta: { endpoint, status: response.status },
-          payload: {},
-          response,
-        }),
-      );
+  return fetchResource({
+    endpoint,
+    dispatch,
+    successAction,
   });
 };

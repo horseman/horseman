@@ -6,6 +6,7 @@ import { ConnectedPaginationProvider as PaginationProvider } from "./providers/P
 import prefetch from "./providers/prefetch";
 import paginator from "./providers/paginator";
 import Horseman from "./Horseman";
+import fetchResource from "./fetchResource";
 import horsemanReducer from "./reducers/horsemanReducer";
 import horsemanRouteReducer from "./reducers/horsemanRouteReducer";
 import horsemanPaginationReducer from "./reducers/horsemanPaginationReducer";
@@ -19,11 +20,12 @@ const horsemanReducers = {
 
 export {
   ActionFactory,
-  horsemanReducers,
-  prefetch,
-  paginator,
-  ResourceProvider,
   PaginationProvider,
+  ResourceProvider,
+  fetchResource,
+  horsemanReducers,
+  paginator,
+  prefetch,
 };
 
 export default Horseman;

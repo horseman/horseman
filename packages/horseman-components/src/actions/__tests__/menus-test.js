@@ -69,4 +69,16 @@ describe("menus", () => {
     );
     expect(ActionFactory.__getInner().mock.calls[2][0]).toEqual("foo");
   });
+
+  test("fetchWPMenu", () => {
+    menusActions.fetchWPMenu("wpMenu");
+
+    expect(ActionFactory.mock.calls[3][0]).toEqual(
+      "@@horseman/addRemoteWPMenu",
+    );
+    expect(ActionFactory.__getInner().mock.calls[3][0]).toEqual("wpMenu");
+
+    const bypassFunction = ActionFactory.mock.calls[3][1];
+    expect(bypassFunction()).toEqual(false);
+  });
 });

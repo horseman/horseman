@@ -6,6 +6,11 @@ export const fetchMenu = uri =>
     uri,
   );
 
+export const fetchWPMenu = uri =>
+  ActionFactory("@@horseman/addRemoteWPMenu", () => Horseman.hasResource(uri))(
+    uri,
+  );
+
 export const fetchMenuSet = uri =>
   ActionFactory("@@horseman/addRemoteMenuSet", () => Horseman.hasResource(uri))(
     uri,

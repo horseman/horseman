@@ -151,4 +151,27 @@ describe("menus reducer", () => {
       two: payload.data[1].menuItems,
     });
   });
+
+  test("addRemoteWPMenu", () => {
+    const data = require("./wpMenu.json");
+
+    expect(
+      menus(state, {
+        type: "@@horseman/addRemoteWPMenu",
+        payload: data,
+      }),
+    ).toEqual({
+      ...state,
+      alternate: [
+        { text: "Foo", to: "http://foo.com" },
+        {
+          text: "Bar",
+          to: "http://bar.com",
+          subnav: [
+            { target: "_blank", text: "Child", to: "https://child.com" },
+          ],
+        },
+      ],
+    });
+  });
 });

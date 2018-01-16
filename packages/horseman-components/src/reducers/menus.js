@@ -1,3 +1,5 @@
+import convertWpMenu from "./convertWpMenu";
+
 const initialState = {};
 
 export default function menus(state = initialState, action) {
@@ -15,6 +17,14 @@ export default function menus(state = initialState, action) {
         ...newMenus,
       };
     }
+
+    case "@@horseman/addRemoteWPMenu": {
+      return {
+        ...state,
+        [action.payload.slug]: convertWpMenu(action.payload.items),
+      };
+    }
+
     case "@@horseman/addRemoteMenu": {
       return {
         ...state,

@@ -1,3 +1,7 @@
+1.19.0 / 2018-1-16
+==================
+- Add action to fetch and parse a Wordpress formatted menu
+
 1.18.0 / 2018-1-9
 ==================
 - Don't fetch menu's if they have already been fetched

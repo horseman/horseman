@@ -11,6 +11,7 @@ const startServer = ({
   publicPath = path.join(__dirname, "./public"),
   viewDir = path.join(__dirname, "./views"),
   port = 80,
+  basicAuth,
 }) => {
   const app = express();
 
@@ -22,6 +23,11 @@ const startServer = ({
 
   app.use(removeSlash);
   app.use(lowercase);
+
+  if (basicAuth) {
+    app.locals = basicAuth;
+    app.use(basicAuth);
+  }
 
   app.get("*", (req, res) =>
     render(req.path).then(response => {

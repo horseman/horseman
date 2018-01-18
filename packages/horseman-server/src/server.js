@@ -5,13 +5,14 @@ import path from "path";
 import redirect from "./helpers/redirect";
 import removeSlash from "./middleware/removeSlash";
 import lowercase from "./middleware/lowercase";
+import basicAuth from "./middleware/basicAuth";
 
 const startServer = ({
   render,
   publicPath = path.join(__dirname, "./public"),
   viewDir = path.join(__dirname, "./views"),
   port = 80,
-  basicAuth,
+  auth,
 }) => {
   const app = express();
 
@@ -24,8 +25,8 @@ const startServer = ({
   app.use(removeSlash);
   app.use(lowercase);
 
-  if (basicAuth) {
-    app.locals = basicAuth;
+  if (auth) {
+    app.locals.authentication = auth;
     app.use(basicAuth);
   }
 

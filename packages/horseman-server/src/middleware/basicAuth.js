@@ -13,7 +13,7 @@ const basicAuth = (req, res, next) => {
     return unauthorized();
   }
 
-  const { accounts } = app.locals.basicAuth;
+  const { accounts } = req.app.locals.authentication;
 
   if (!accounts instanceof Array) {
     return unauthorized();

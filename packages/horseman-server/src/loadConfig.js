@@ -6,7 +6,7 @@ const workingDirectory = path.resolve(process.cwd());
 const defaults = {
   publicPath: path.join(workingDirectory, "public"),
   backendBundle: path.join(workingDirectory, "public", "backend.js"),
-  basicAuth: null,
+  auth: null,
 };
 
 // Check for horseman config

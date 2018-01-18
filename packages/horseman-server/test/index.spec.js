@@ -84,6 +84,7 @@ describe("loading express", () => {
 describe("basic auth", () => {
   let server;
   const port = 3000;
+  const healthCheckPath = "/status";
   const auth = {
     accounts: [
       {
@@ -93,7 +94,7 @@ describe("basic auth", () => {
     ],
   };
   beforeEach(() => {
-    server = startServer({ render, port, auth });
+    server = startServer({ render, port, auth, healthCheckPath });
   });
   afterEach(done => {
     server.close(done);
@@ -102,6 +103,11 @@ describe("basic auth", () => {
     request(server)
       .get("/")
       .expect(401, done);
+  });
+  it("allows unauthorized health checks", done => {
+    request(server)
+      .get("/status")
+      .expect(200, done);
   });
   it("doesn't allow poorly authorized requests", done => {
     request(server)

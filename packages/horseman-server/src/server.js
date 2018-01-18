@@ -6,6 +6,7 @@ import redirect from "./helpers/redirect";
 import removeSlash from "./middleware/removeSlash";
 import lowercase from "./middleware/lowercase";
 import basicAuth from "./middleware/basicAuth";
+import healthCheck from "./middleware/healthCheck";
 
 const startServer = ({
   render,
@@ -13,6 +14,7 @@ const startServer = ({
   viewDir = path.join(__dirname, "./views"),
   port = 80,
   auth,
+  healthCheckPath,
 }) => {
   const app = express();
 
@@ -24,6 +26,12 @@ const startServer = ({
 
   app.use(removeSlash);
   app.use(lowercase);
+
+  // This must run before basic auth
+  if (healthCheckPath) {
+    app.locals.healthCheckPath = healthCheckPath;
+    app.use(healthCheck);
+  }
 
   if (auth) {
     app.locals.authentication = auth;

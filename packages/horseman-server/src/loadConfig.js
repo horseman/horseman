@@ -7,6 +7,7 @@ const defaults = {
   publicPath: path.join(workingDirectory, "public"),
   backendBundle: path.join(workingDirectory, "public", "backend.js"),
   auth: null,
+  healthCheckPath: null,
 };
 
 // Check for horseman config

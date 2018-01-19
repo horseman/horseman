@@ -80,6 +80,16 @@ describe("loading express", () => {
       .get("/foo/bar")
       .expect(404, done);
   });
+  it("doesn't perform geolookup if not set", done => {
+    request(server)
+      .get("/")
+      .expect(function(res) {
+        if (res.text.indexOf("regionCode") !== -1) {
+          throw new Error("contains region code when geoLookup not set");
+        }
+      })
+      .expect(200, done);
+  });
 });
 describe("basic auth", () => {
   let server;

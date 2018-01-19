@@ -17,7 +17,8 @@
     "basic-auth": "^2.0.0",
     "compression": "^1.7.1",
     "ejs": "^2.5.7",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "node-where": "^1.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

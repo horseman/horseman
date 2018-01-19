@@ -122,3 +122,29 @@ describe("basic auth", () => {
       .expect(200, done);
   });
 });
+describe("using geolookup", () => {
+  let server;
+  const port = 3000;
+  const healthCheckPath = "/status";
+  const render = (path, req) =>
+    new Promise(resolve => {
+      const html = JSON.stringify(req.geoip);
+      return resolve(response(200, html));
+    });
+  beforeEach(() => {
+    server = startServer({ render, port, geoLookup: true });
+  });
+  afterEach(done => {
+    server.close(done);
+  });
+  it("performs lookup", done => {
+    request(server)
+      .get("/")
+      .expect(function(res) {
+        if (res.text.indexOf("regionCode") === -1) {
+          throw new Error("missing region code");
+        }
+      })
+      .expect(200, done);
+  });
+});

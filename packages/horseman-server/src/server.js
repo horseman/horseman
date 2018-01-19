@@ -7,6 +7,7 @@ import removeSlash from "./middleware/removeSlash";
 import lowercase from "./middleware/lowercase";
 import basicAuth from "./middleware/basicAuth";
 import healthCheck from "./middleware/healthCheck";
+import geoMiddleware from "./middleware/geo";
 
 const startServer = ({
   render,
@@ -15,6 +16,7 @@ const startServer = ({
   port = 80,
   auth,
   healthCheckPath,
+  geoLookup,
 }) => {
   const app = express();
 
@@ -33,13 +35,17 @@ const startServer = ({
     app.use(healthCheck);
   }
 
+  if (geoLookup) {
+    app.use(geoMiddleware);
+  }
+
   if (auth) {
     app.locals.authentication = auth;
     app.use(basicAuth);
   }
 
   app.get("*", (req, res) =>
-    render(req.path).then(response => {
+    render(req.path, req).then(response => {
       if (response.statusCode === 301 || response.statusCode === 302) {
         return redirect(res, req, response.statusCode, response.url);
       }

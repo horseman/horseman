@@ -1,6 +1,8 @@
 import "fetch-everywhere";
 import * as types from "./constants/ActionTypes";
 
+import morphResponse from "./morphResponse";
+
 /**
  * Will fetch a resources from a remote endpoint and dispatch an action when
  * successfully returned.
@@ -23,7 +25,7 @@ export default ({ endpoint, dispatch, successAction }) =>
                 type: successAction,
                 meta: { endpoint, status: response.status },
                 payload,
-                response,
+                response: morphResponse(response),
               });
             } catch (e) {
               if (process.env.NODE_ENV !== "production") {
@@ -46,17 +48,17 @@ export default ({ endpoint, dispatch, successAction }) =>
             type: types.RESOURCE_FAIL,
             meta: { endpoint, status: response.status },
             payload,
-            response,
+            response: morphResponse(response),
           }),
         )
-        .catch(() =>
-          dispatch({
+        .catch(() => {
+          return dispatch({
             type: types.RESOURCE_FAIL,
             meta: { endpoint, status: response.status },
             payload: {},
-            response,
-          }),
-        );
+            response: morphResponse(response),
+          });
+        });
     })
     // None of this is tested as of yet. This is experimental and most likely
     // will not exist in this form at the end of the day.

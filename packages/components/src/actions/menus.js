@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved, import/extensions */
-import Horseman, { ActionFactory } from "horseman-core";
+import Horseman, { ActionFactory } from "@horseman/core";
 
 export const fetchMenu = uri =>
   ActionFactory("@@horseman/addRemoteMenu", () => Horseman.hasResource(uri))(

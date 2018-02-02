@@ -11,7 +11,7 @@ The open / closed state is manually set by the `handleClose` prop
 Add the modal reducers to your reducers object
 
 ```js
-import { reducers } from "horseman-components";
+import { reducers } from "@horseman/components";
 
 export default combineReducers({
   ...reducers.modal,
@@ -24,7 +24,7 @@ Connect the modal to your redux store
 /* ConnectedModal.js */
 import { connect } from "react-redux";
 
-import { Modal, actions } from "horseman-components";
+import { Modal, actions } from "@horseman/components";
 
 export const mapStateToProps = state => ({
   isOpen: state.modal.modalType !== null,

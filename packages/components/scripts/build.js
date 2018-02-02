@@ -7,8 +7,6 @@ const resolve = require("rollup-plugin-node-resolve");
 const commonjs = require("rollup-plugin-commonjs");
 const babel = require("rollup-plugin-babel");
 
-const packages = ["horseman-components"];
-
 const exec = (command, extraEnv) =>
   execSync(command, {
     stdio: "inherit",
@@ -41,7 +39,7 @@ async function buildCjs({ input, file }) {
     input,
     external: [
       "element-resize-detector",
-      "horseman-core",
+      "@horseman/core",
       "prop-types",
       "react",
       "react-modal",

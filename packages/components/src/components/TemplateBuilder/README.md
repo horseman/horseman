@@ -5,7 +5,7 @@ CMS api.
 
 ## Example
 ```js
-import { TemplateBuilder } from "horseman-components";
+import { TemplateBuilder } from "@horseman/components";
 
 import Content from "components/Content";
 import Header from "components/Header";

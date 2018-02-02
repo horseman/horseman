@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved, import/extensions, no-underscore-dangle */
-import Horseman, { ActionFactory } from "horseman-core";
+import Horseman, { ActionFactory } from "@horseman/core";
 import * as menusActions from "../menus";
 
 describe("menus", () => {

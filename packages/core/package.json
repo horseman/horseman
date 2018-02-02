@@ -6,6 +6,9 @@
   "repository": "horseman/server",
   "license": "MIT",
   "author": "Jared Meyering <jared@blendimc.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "test": "jest"

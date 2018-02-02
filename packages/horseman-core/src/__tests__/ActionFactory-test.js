@@ -6,6 +6,8 @@ import ActionFactory from "../ActionFactory";
 
 import * as types from "../constants/ActionTypes";
 
+jest.mock("../headersToObject", () => jest.fn(() => ({})));
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -46,7 +48,11 @@ describe("ActionFactory", () => {
         payload: {
           hello: "world",
         },
-        response: expect.any(Object),
+        response: {
+          status: 200,
+          url: expect.anything(),
+          headers: expect.any(Object),
+        },
       },
     ];
 
@@ -78,7 +84,11 @@ describe("ActionFactory", () => {
           status: 404,
         },
         payload: {},
-        response: expect.any(Object),
+        response: {
+          status: 404,
+          url: expect.anything(),
+          headers: expect.any(Object),
+        },
       },
     ];
 

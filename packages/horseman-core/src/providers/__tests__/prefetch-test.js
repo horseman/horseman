@@ -9,6 +9,8 @@ import fetchMock from "fetch-mock";
 import prefetch from "../../providers/prefetch";
 import * as types from "../../constants/ActionTypes";
 
+jest.mock("../../headersToObject");
+
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const store = mockStore({

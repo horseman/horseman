@@ -1,5 +1,5 @@
 {
-  "name": "horseman-server",
+  "name": "@horseman/server",
   "author": "Marc Tanis <marc@blendimc.com>",
   "version": "0.6.5",
   "description": "A node.js server helper for SSR",

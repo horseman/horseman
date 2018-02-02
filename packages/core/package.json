@@ -1,11 +1,10 @@
 {
-  "name": "horseman-components",
-  "version": "1.19.1",
-  "description": "Components meant to be used with horseman.io projects",
+  "name": "@horseman/core",
+  "version": "2.8.0",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "repository": "horseman/horseman-components",
   "license": "MIT",
+  "author": "Jared Meyering <jared@blendimc.com>",
   "scripts": {
     "build": "node scripts/build.js",
     "test": "jest"
@@ -22,11 +21,15 @@
       "enzyme-to-json/serializer"
     ]
   },
+  "dependencies": {
+    "fetch-everywhere": "^1.0.5",
+    "node-fetch": "^2.0.0-alpha.9"
+  },
   "peerDependencies": {
-    "horseman-core": "^2.7.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "styled-components": "^2.2.1"
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -34,23 +37,18 @@
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2",
     "enzyme-to-json": "^3.1.4",
+    "fetch-mock": "^6.0.0-beta.7",
     "jest": "^21.2.1",
-    "jest-styled-components": "^4.9.0",
-    "prop-types": "^15.6.0",
+    "mock-fetch-api": "^1.0.7",
+    "prop-types": "^15.5.8",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.1.1",
     "react-test-renderer": "^16.0.0",
-    "rollup": "^0.50.0",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-commonjs": "^8.2.4",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "styled-components": "^2.2.1"
-  },
-  "dependencies": {
-    "babel-helpers": "^6.24.1",
-    "element-resize-detector": "^1.1.12",
-    "react-modal": "^3.1.0",
-    "react-onclickoutside": "^6.6.3",
-    "react-responsive-carousel": "^3.1.28"
+    "redux": "^3.7.0",
+    "redux-mock-store": "^1.2.3",
+    "redux-test-utils": "^0.1.2",
+    "redux-thunk": "^2.2.0"
   }
 }

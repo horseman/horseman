@@ -4,7 +4,7 @@
   "description": "Components meant to be used with horseman.io projects",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
-  "repository": "horseman/horseman-components",
+  "repository": "horseman/components",
   "license": "MIT",
   "scripts": {
     "build": "node scripts/build.js",
@@ -23,7 +23,7 @@
     ]
   },
   "peerDependencies": {
-    "horseman-core": "^2.7.0",
+    "@horseman/core": "^3.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "styled-components": "^2.2.1"

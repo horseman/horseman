@@ -4,7 +4,7 @@
   "version": "0.6.5",
   "description": "A node.js server helper for SSR",
   "module": "dist/es/index.js",
-  "repository": "horseman/horseman-server",
+  "repository": "horseman/server",
   "license": "MIT",
   "scripts": {
     "build": "node ./scripts/build.js",

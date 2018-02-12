@@ -51,14 +51,14 @@ export default ({ endpoint, dispatch, successAction }) =>
             response: morphResponse(response),
           }),
         )
-        .catch(() => {
-          return dispatch({
+        .catch(() =>
+          dispatch({
             type: types.RESOURCE_FAIL,
             meta: { endpoint, status: response.status },
             payload: {},
             response: morphResponse(response),
-          });
-        });
+          }),
+        );
     })
     // None of this is tested as of yet. This is experimental and most likely
     // will not exist in this form at the end of the day.
@@ -66,11 +66,22 @@ export default ({ endpoint, dispatch, successAction }) =>
       if (response.status === 301 || response.status === 302) {
         return response
           .json()
-          .then(redirect => ({
-            statusCode: response.status,
-            url: redirect.location,
-          }))
-          .catch(() => ({ statusCode: response.status, url: "/" }));
+          .then(payload => {
+            dispatch({
+              type: types.ADD_RESOURCE,
+              meta: { endpoint, status: response.status },
+              payload,
+              response: morphResponse(response),
+            });
+          })
+          .catch(() =>
+            dispatch({
+              type: types.ADD_RESOURCE,
+              meta: { endpoint, status: response.status },
+              payload: {},
+              response: { statusCode: response.status, url: "/" },
+            }),
+          );
       }
 
       return dispatch({

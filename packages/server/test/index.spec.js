@@ -13,9 +13,20 @@ const response = (statusCode = 200, html, url) => ({
 
 const render = path =>
   new Promise(resolve => {
+    console.log("path", path);
     switch (path) {
       case "/":
         return resolve(response());
+      case "/cookie":
+        return resolve({
+          statusCode: 200,
+          cookies: [{ name: "foo", value: "bar", options: {} }],
+          data: {
+            app: {
+              html: "",
+            },
+          },
+        });
       case "/old":
         return resolve(response(301, "Redirect", "/new"));
       case "/temp":
@@ -56,6 +67,12 @@ describe("loading express", () => {
       .get("/Old")
       .expect("location", "/old")
       .expect(301, done);
+  });
+  it("adds cookie", done => {
+    request(server)
+      .get("/cookie")
+      .expect("Set-Cookie", "foo=bar; Path=/")
+      .expect(200, done);
   });
   it("keeps query strings when redirecting with slash", done => {
     request(server)

@@ -1,7 +1,7 @@
 {
   "name": "@horseman/server",
   "author": "Marc Tanis <marc@blendimc.com>",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "A node.js server helper for SSR",
   "module": "dist/es/index.js",
   "repository": "horseman/server",

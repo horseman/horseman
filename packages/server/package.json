@@ -22,7 +22,7 @@
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "node-where": "^1.1.0"
+    "iplocation": "^5.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

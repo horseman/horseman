@@ -1,8 +1,11 @@
-import where from "node-where";
+const iplocation = require("iplocation");
 
 const geoMiddleware = (req, res, next) => {
-  where.is(req.ip, function(err, result) {
+  iplocation(req.ip).then(result => {
     req.geoip = result;
+    next();
+  }).catch( () => {
+    req.geoip = {attributes:null};
     next();
   });
 };

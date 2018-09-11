@@ -38,8 +38,8 @@ const startServer = ({
   }
 
   if (geoLookup) {
+    app.enable("trust proxy");
     app.use(geoMiddleware);
-    app.enable('trust proxy');
   }
 
   if (auth) {

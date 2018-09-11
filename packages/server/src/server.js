@@ -39,7 +39,7 @@ const startServer = ({
 
   if (geoLookup) {
     app.use(geoMiddleware);
-    app.set('trust proxy',true);
+    app.set('trust proxy', true);
   }
 
   if (auth) {
@@ -51,14 +51,12 @@ const startServer = ({
     render(req.path, req).then(response => {
       if (response.cookies && response.cookies.length > 0) {
         response.cookies.forEach(cookie => {
-          console.log("cookie", cookie);
           res.cookie(cookie.name, cookie.value, cookie.options);
         });
       }
       if (response.statusCode === 301 || response.statusCode === 302) {
         return redirect(res, req, response.statusCode, response.url);
       }
-      console.log("headers", res.headers);
       return res
         .status(response.statusCode || 200)
         .render("index", response.data);

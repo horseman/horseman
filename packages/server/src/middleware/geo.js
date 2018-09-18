@@ -1,7 +1,7 @@
 const iplocation = require("iplocation");
 
 const geoMiddleware = (req, res, next) => {
-  if (parseInt(req.ip.split(".")[0], 10) === 10) {
+  if (req.ip === undefined || parseInt(req.ip.split(".")[0], 10) === 10) {
     req.geoip = { attributes: null };
     next();
     return;

@@ -18,6 +18,7 @@ const startServer = ({
   auth,
   healthCheckPath,
   geoLookup,
+  geoDriver = geoMiddleware,
 }) => {
   const app = express();
 
@@ -39,7 +40,7 @@ const startServer = ({
 
   if (geoLookup) {
     app.enable("trust proxy");
-    app.use(geoMiddleware);
+    app.use(geoDriver);
   }
 
   if (auth) {

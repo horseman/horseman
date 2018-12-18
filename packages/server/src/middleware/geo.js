@@ -6,7 +6,7 @@ const geoMiddleware = (req, res, next) => {
     next();
     return;
   }
-  iplocation(req.ip)
+  iplocation(req.ip,['https://api.db-ip.com/v2/free/*/'])
     .then(result => {
       req.geoip = { attributes: result };
       next();
